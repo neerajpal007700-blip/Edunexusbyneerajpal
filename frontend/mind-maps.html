@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="EduNexus Mind Maps - Chapter-wise visual revision resources for Class 9 and Class 10 students.">
+
+    <meta
+        name="keywords"
+        content="EduNexus, Mind Maps, Class 9, Class 10, Science, Maths, Social Science, Revision">
+
+    <meta
+        name="author"
+        content="Neeraj Pal">
+
+    <meta
+        name="theme-color"
+        content="#6c2cff">
+
+
+    <!-- =====================================================
+         PAGE TITLE
+    ====================================================== -->
+
+    <title>
+        Mind Maps | EduNexus by Neeraj Pal
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         MAIN EDUNEXUS CSS
+         Your supplied stylesheet
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+   
+    <link 
+        rel="stylesheet"
+        href="mm.css">
+   <link 
+        rel="stylesheet"
+        href="responsive.css">
+
+
+
+</head>
+
+
+<body id="mindmaps-body">
+
+
+    <!-- =====================================================
+         PRELOADER
+    ====================================================== -->
+
+    <div
+        id="preloader"
+        class="preloader"
+        aria-label="Loading EduNexus">
+
+        <div class="loader-content">
+
+            <div class="loader-logo">
+
+                <img
+                    src="frontend/assets/images/logo.png"
+                    alt="EduNexus Logo"
+                    onerror="this.style.display='none'">
+
+            </div>
+
+
+            <div class="loader-spinner"></div>
+
+
+            <p>
+                Loading EduNexus...
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOP LOGO SECTION
+    ====================================================== -->
+
+    <section
+        id="top-logo-section"
+        class="top-logo-section">
+
+        <div
+            id="logo-container"
+            class="container logo-container">
+
+
+            <a
+                id="brand-logo"
+                class="brand-logo"
+                href="index.html"
+                aria-label="EduNexus Home">
+
+
+                <img
+                    id="main-logo"
+                    class="main-logo"
+                    src="frontend/assets/images/logo.png"
+                    alt="EduNexus by Neeraj Pal"
+                    onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+
+
+                <span
+                    id="logo-fallback"
+                    class="logo-fallback">
+
+                    EduNexus
+
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOP BANNER
+    ====================================================== -->
+
+    <section
+        id="top-banner-section"
+        class="top-banner-section">
+
+        <div
+            id="banner-container"
+            class="container banner-container">
+
+
+            <a
+                id="hero-banner-link"
+                class="hero-banner-link"
+                href="index.html"
+                aria-label="EduNexus Home">
+
+
+                <div
+                    id="banner-fallback"
+                    class="banner-fallback">
+
+
+                    <div class="banner-fallback-content">
+
+                        <span class="banner-badge">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            EDUNEXUS LEARNING HUB
+
+                        </span>
+
+
+                        <h1>
+
+                            Learn.
+                            <span>Revise.</span>
+                            Grow.
+
+                        </h1>
+
+
+                        <p>
+
+                            Smart learning resources
+                            by Neeraj Pal.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <img
+                    id="hero-banner-image"
+                    class="hero-banner-image"
+                    src="frontend/assets/images/banner.jpg"
+                    alt="EduNexus Learning Banner"
+                    onerror="this.style.display='none';">
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header
+        id="main-navbar"
+        class="main-navbar">
+
+
+        <div
+            id="navbar-container"
+            class="container navbar-container">
+
+
+            <!-- Brand -->
+
+            <a
+                id="navbar-brand"
+                class="navbar-brand"
+                href="index.html">
+
+                Edu<span>Nexus</span>
+
+            </a>
+
+
+            <!-- Mobile Button -->
+
+            <button
+                id="mobile-menu-btn"
+                class="mobile-menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <!-- Navigation -->
+
+            <nav
+                id="navbar-menu"
+                class="navbar-menu"
+                aria-label="Main Navigation">
+
+
+                <a
+                    id="nav-home"
+                    class="nav-link"
+                    href="index.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Home
+
+                </a>
+
+
+                <a
+                    id="nav-notes"
+                    class="nav-link"
+                    href="notes.html">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    Notes
+
+                </a>
+
+
+                <a
+                    id="nav-mindmaps"
+                    class="nav-link active"
+                    href="mind-maps.html"
+                    aria-current="page">
+
+                    <i class="fa-solid fa-diagram-project"></i>
+
+                    Mind Maps
+
+                </a>
+
+
+                <a
+                    id="nav-quiz"
+                    class="nav-link"
+                    href="quiz.html">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Quiz
+
+                </a>
+
+
+                <a
+                    id="nav-pyq"
+                    class="nav-link"
+                    href="pyq.html">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    PYQs
+
+                </a>
+
+
+                <a
+                    id="nav-videos"
+                    class="nav-link"
+                    href="videos.html">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                    Videos
+
+                </a>
+
+
+                <a
+                    id="nav-login"
+                    class="nav-login-btn"
+                    href="login.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Login
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main
+        id="mindmaps-page"
+        class="mindmaps-page">
+
+
+        <!-- =================================================
+             MIND MAP HERO
+        ================================================== -->
+
+        <section
+            id="mindmaps-hero"
+            class="mm-hero-section">
+
+
+            <div class="container">
+
+
+                <div
+                    id="mindmaps-hero-content"
+                    class="mm-hero-content">
+
+
+                    <span
+                        id="mindmaps-badge"
+                        class="mm-hero-badge">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        SMART REVISION
+
+                    </span>
+
+
+                    <h1
+                        id="mindmaps-title"
+                        class="mm-hero-title">
+
+                        Learn Faster with
+
+                        <span>
+                            Mind Maps
+                        </span>
+
+                    </h1>
+
+
+                    <p
+                        id="mindmaps-description"
+                        class="mm-hero-description">
+
+                        Chapter-wise visual summaries designed
+                        to help you understand concepts,
+                        connect ideas and revise faster.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MIND MAP CONTENT
+        ================================================== -->
+
+        <section
+            id="mindmaps-content"
+            class="section mm-content-section">
+
+
+            <div class="container">
+
+
+                <!-- =========================================
+                     TOOLBAR
+                ========================================== -->
+
+                <div
+                    id="mindmaps-toolbar"
+                    class="mm-toolbar">
+
+
+                    <!-- Search -->
+
+                    <div
+                        id="mindmaps-search-box"
+                        class="mm-search-box">
+
+
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true">
+                        </i>
+
+
+                        <input
+                            id="mindmaps-search"
+                            class="mm-search-input"
+                            type="search"
+                            placeholder="Search chapter, subject or topic..."
+                            autocomplete="off"
+                            aria-label="Search mind maps">
+
+                    </div>
+
+
+
+                    <!-- Filters -->
+
+                    <div
+                        id="mindmaps-filters"
+                        class="mm-filters"
+                        role="group"
+                        aria-label="Filter mind maps">
+
+
+                        <button
+                            id="filter-all"
+                            class="mm-filter-btn active"
+                            type="button"
+                            data-filter="all">
+
+                            All
+
+                        </button>
+
+
+                        <button
+                            id="filter-class-9"
+                            class="mm-filter-btn"
+                            type="button"
+                            data-filter="class9">
+
+                            Class 9
+
+                        </button>
+
+
+                        <button
+                            id="filter-class-10"
+                            class="mm-filter-btn"
+                            type="button"
+                            data-filter="class10">
+
+                            Class 10
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SCIENCE SECTION
+                ================================================== -->
+
+                <section
+                    id="mindmaps-science"
+                    class="mm-subject-section"
+                    data-subject="science">
+
+
+                    <div
+                        id="science-header"
+                        class="mm-subject-header">
+
+
+                        <div
+                            id="science-heading"
+                            class="mm-subject-heading">
+
+
+                            <div
+                                id="science-icon"
+                                class="mm-subject-icon">
+
+                                <i class="fa-solid fa-flask"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h2
+                                    id="science-title"
+                                    class="mm-subject-title">
+
+                                    Science
+
+                                </h2>
+
+
+                                <p
+                                    id="science-subtitle"
+                                    class="mm-subject-subtitle">
+
+                                    Concepts, processes and
+                                    important points
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <span
+                            id="science-count"
+                            class="mm-subject-count">
+
+                            Class 9 & 10
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        id="science-mindmap-grid"
+                        class="mm-grid">
+
+
+                        <!-- =====================================
+                             SCIENCE CARD 01
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-matter-in-our-surroundings"
+                            class="mm-card"
+                            data-class="class9"
+                            data-subject="science"
+                            data-search="class 9 science matter in our surroundings matter states particle evaporation">
+
+
+                            <div
+                                id="preview-matter"
+                                class="mm-card-preview">
+
+
+                                <span
+                                    class="mm-preview-dot mm-dot-1">
+                                </span>
+
+                                <span
+                                    class="mm-preview-dot mm-dot-2">
+                                </span>
+
+                                <span
+                                    class="mm-preview-dot mm-dot-3">
+                                </span>
+
+                                <span
+                                    class="mm-preview-dot mm-dot-4">
+                                </span>
+
+
+                                <div class="mm-main-node">
+
+                                    Matter
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 9 • SCIENCE
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Matter in Our Surroundings
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    States of matter, particle nature,
+                                    evaporation and important concepts.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-matter"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Matter in Our Surroundings">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-matter"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-9/science/matter-in-our-surroundings.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             SCIENCE CARD 02
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-atoms-and-molecules"
+                            class="mm-card"
+                            data-class="class9"
+                            data-subject="science"
+                            data-search="class 9 science atoms molecules chemical combination formula">
+
+
+                            <div
+                                id="preview-atoms"
+                                class="mm-card-preview">
+
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Atoms
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 9 • SCIENCE
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Atoms and Molecules
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Laws of chemical combination,
+                                    atoms, molecules and formulae.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-atoms"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Atoms and Molecules">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-atoms"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-9/science/atoms-and-molecules.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             SCIENCE CARD 03
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-chemical-reactions"
+                            class="mm-card"
+                            data-class="class10"
+                            data-subject="science"
+                            data-search="class 10 science chemical reactions equations oxidation reduction balancing">
+
+
+                            <div
+                                id="preview-chemical-reactions"
+                                class="mm-card-preview">
+
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Reactions
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 10 • SCIENCE
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Chemical Reactions & Equations
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Types of reactions, balancing,
+                                    oxidation and reduction.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-chemical-reactions"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Chemical Reactions & Equations">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-chemical-reactions"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-10/science/chemical-reactions-and-equations.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             SCIENCE CARD 04
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-life-processes"
+                            class="mm-card"
+                            data-class="class10"
+                            data-subject="science"
+                            data-search="class 10 science life processes nutrition respiration transportation excretion">
+
+
+                            <div
+                                id="preview-life-processes"
+                                class="mm-card-preview">
+
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Life Processes
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 10 • SCIENCE
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Life Processes
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Nutrition, respiration,
+                                    transportation and excretion.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-life-processes"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Life Processes">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-life-processes"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-10/science/life-processes.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     MATHEMATICS SECTION
+                ================================================== -->
+
+                <section
+                    id="mindmaps-mathematics"
+                    class="mm-subject-section"
+                    data-subject="mathematics">
+
+
+                    <div
+                        id="mathematics-header"
+                        class="mm-subject-header">
+
+
+                        <div
+                            id="mathematics-heading"
+                            class="mm-subject-heading">
+
+
+                            <div
+                                id="mathematics-icon"
+                                class="mm-subject-icon">
+
+                                <i class="fa-solid fa-calculator"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h2
+                                    id="mathematics-title"
+                                    class="mm-subject-title">
+
+                                    Mathematics
+
+                                </h2>
+
+
+                                <p
+                                    id="mathematics-subtitle"
+                                    class="mm-subject-subtitle">
+
+                                    Formulas, concepts and
+                                    problem solving
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <span
+                            id="mathematics-count"
+                            class="mm-subject-count">
+
+                            Class 9 & 10
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        id="mathematics-mindmap-grid"
+                        class="mm-grid">
+
+
+                        <!-- =====================================
+                             MATHS CARD 01
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-number-systems"
+                            class="mm-card"
+                            data-class="class9"
+                            data-subject="mathematics"
+                            data-search="class 9 maths number systems rational irrational real numbers">
+
+
+                            <div
+                                id="preview-number-systems"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Number Systems
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 9 • MATHS
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Number Systems
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Rational and irrational numbers,
+                                    real numbers and properties.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-number-systems"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Number Systems">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-number-systems"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-9/maths/number-systems.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             MATHS CARD 02
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-polynomials"
+                            class="mm-card"
+                            data-class="class9"
+                            data-subject="mathematics"
+                            data-search="class 9 maths polynomials algebra terms coefficients identities factorisation">
+
+
+                            <div
+                                id="preview-polynomials"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Polynomials
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 9 • MATHS
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Polynomials
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Terms, coefficients, degrees,
+                                    identities and factorisation.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-polynomials"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Polynomials">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-polynomials"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-9/maths/polynomials.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             MATHS CARD 03
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-quadratic-equations"
+                            class="mm-card"
+                            data-class="class10"
+                            data-subject="mathematics"
+                            data-search="class 10 maths quadratic equations roots discriminant formula">
+
+
+                            <div
+                                id="preview-quadratic"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Quadratic
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 10 • MATHS
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Quadratic Equations
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Standard form, roots,
+                                    discriminant and formula.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-quadratic"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Quadratic Equations">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-quadratic"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-10/maths/quadratic-equations.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             MATHS CARD 04
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-trigonometry"
+                            class="mm-card"
+                            data-class="class10"
+                            data-subject="mathematics"
+                            data-search="class 10 maths trigonometry ratios identities standard values">
+
+
+                            <div
+                                id="preview-trigonometry"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Trigonometry
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 10 • MATHS
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Introduction to Trigonometry
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Ratios, identities, standard
+                                    values and relationships.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-trigonometry"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Introduction to Trigonometry">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-trigonometry"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-10/maths/trigonometry.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SOCIAL SCIENCE SECTION
+                ================================================== -->
+
+                <section
+                    id="mindmaps-social-science"
+                    class="mm-subject-section"
+                    data-subject="social-science">
+
+
+                    <div
+                        id="social-science-header"
+                        class="mm-subject-header">
+
+
+                        <div
+                            id="social-science-heading"
+                            class="mm-subject-heading">
+
+
+                            <div
+                                id="social-science-icon"
+                                class="mm-subject-icon">
+
+                                <i class="fa-solid fa-earth-asia"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h2
+                                    id="social-science-title"
+                                    class="mm-subject-title">
+
+                                    Social Science
+
+                                </h2>
+
+
+                                <p
+                                    id="social-science-subtitle"
+                                    class="mm-subject-subtitle">
+
+                                    History, Geography, Civics
+                                    & Economics
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <span
+                            id="social-science-count"
+                            class="mm-subject-count">
+
+                            Class 9 & 10
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        id="social-science-mindmap-grid"
+                        class="mm-grid">
+
+
+                        <!-- =====================================
+                             SST CARD 01
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-french-revolution"
+                            class="mm-card"
+                            data-class="class9"
+                            data-subject="social-science"
+                            data-search="class 9 history french revolution causes events personalities effects">
+
+
+                            <div
+                                id="preview-french-revolution"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Revolution
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 9 • HISTORY
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    The French Revolution
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Causes, events, personalities,
+                                    effects and important dates.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-french-revolution"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="The French Revolution">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-french-revolution"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-9/sst/french-revolution.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             SST CARD 02
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-india-size-location"
+                            class="mm-card"
+                            data-class="class9"
+                            data-subject="social-science"
+                            data-search="class 9 geography india size location latitude longitude neighbours extent">
+
+
+                            <div
+                                id="preview-india"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    India
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 9 • GEOGRAPHY
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    India – Size and Location
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Location, latitudes, longitudes,
+                                    neighbours and extent.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-india"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="India – Size and Location">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-india"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-9/sst/india-size-location.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             SST CARD 03
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-nationalism-india"
+                            class="mm-card"
+                            data-class="class10"
+                            data-subject="social-science"
+                            data-search="class 10 history nationalism in india gandhi movements leaders">
+
+
+                            <div
+                                id="preview-nationalism"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Nationalism
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 10 • HISTORY
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Nationalism in India
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Gandhian movements, events,
+                                    leaders and developments.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-nationalism"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Nationalism in India">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-nationalism"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-10/sst/nationalism-in-india.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             SST CARD 04
+                        ====================================== -->
+
+                        <article
+                            id="mindmap-development"
+                            class="mm-card"
+                            data-class="class10"
+                            data-subject="social-science"
+                            data-search="class 10 economics development income public facilities sustainability">
+
+
+                            <div
+                                id="preview-development"
+                                class="mm-card-preview">
+
+                                <span class="mm-preview-dot mm-dot-1"></span>
+                                <span class="mm-preview-dot mm-dot-2"></span>
+                                <span class="mm-preview-dot mm-dot-3"></span>
+                                <span class="mm-preview-dot mm-dot-4"></span>
+
+
+                                <div class="mm-main-node">
+
+                                    Development
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mm-card-body">
+
+
+                                <span class="mm-card-label">
+
+                                    CLASS 10 • ECONOMICS
+
+                                </span>
+
+
+                                <h3 class="mm-card-title">
+
+                                    Development
+
+                                </h3>
+
+
+                                <p class="mm-card-description">
+
+                                    Development goals, income,
+                                    public facilities and sustainability.
+
+                                </p>
+
+
+                                <div class="mm-card-actions">
+
+
+                                    <button
+                                        id="view-development"
+                                        class="mm-action mm-action-view"
+                                        type="button"
+                                        data-map-title="Development">
+
+                                        <i class="fa-solid fa-eye"></i>
+
+                                        View
+
+                                    </button>
+
+
+                                    <a
+                                        id="download-development"
+                                        class="mm-action mm-action-download"
+                                        href="frontend/assets/mindmaps/class-10/sst/development.pdf"
+                                        download>
+
+                                        <i class="fa-solid fa-download"></i>
+
+                                        PDF
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
+                <div
+                    id="mindmaps-empty"
+                    class="mm-empty"
+                    hidden>
+
+
+                    <div class="mm-empty-icon">
+
+                        <i class="fa-solid fa-map-location-dot"></i>
+
+                    </div>
+
+
+                    <h3 class="mm-empty-title">
+
+                        No Mind Map Found
+
+                    </h3>
+
+
+                    <p class="mm-empty-description">
+
+                        Try another chapter, subject or class.
+
+                    </p>
+
+
+                    <button
+                        id="clear-mindmap-search"
+                        class="btn btn-primary"
+                        type="button">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Clear Search
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CTA
+                ================================================== -->
+
+                <section
+                    id="mindmaps-cta"
+                    class="mm-cta-section">
+
+
+                    <div class="mm-cta-content">
+
+
+                        <span class="mm-cta-icon">
+
+                            <i class="fa-solid fa-book-open-reader"></i>
+
+                        </span>
+
+
+                        <div>
+
+                            <h2 class="mm-cta-title">
+
+                                Continue Your Revision
+
+                            </h2>
+
+
+                            <p class="mm-cta-description">
+
+                                Explore chapter notes, quizzes,
+                                previous year questions and
+                                educational videos on EduNexus.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        id="mindmaps-cta-button"
+                        class="btn btn-light"
+                        href="notes.html">
+
+                        Explore Notes
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         MIND MAP MODAL
+    ====================================================== -->
+
+    <div
+        id="mindmap-modal"
+        class="mm-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mindmap-modal-title"
+        hidden>
+
+
+        <div
+            id="mindmap-modal-overlay"
+            class="mm-modal-overlay">
+        </div>
+
+
+        <div
+            id="mindmap-modal-box"
+            class="mm-modal-box">
+
+
+            <button
+                id="mindmap-modal-close"
+                class="mm-modal-close"
+                type="button"
+                aria-label="Close mind map">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="mm-modal-header">
+
+
+                <span class="mm-modal-badge">
+
+                    <i class="fa-solid fa-diagram-project"></i>
+
+                    MIND MAP
+
+                </span>
+
+
+                <h2
+                    id="mindmap-modal-title"
+                    class="mm-modal-title">
+
+                    Mind Map
+
+                </h2>
+
+            </div>
+
+
+            <div
+                id="mindmap-modal-content"
+                class="mm-modal-content">
+
+
+                <div
+                    id="mindmap-modal-preview"
+                    class="mm-modal-preview">
+
+
+                    <div
+                        id="mindmap-modal-topic"
+                        class="mm-modal-topic">
+
+                        Mind Map
+
+                    </div>
+
+
+                    <div class="mm-modal-branch mm-branch-1">
+                        Concept 1
+                    </div>
+
+                    <div class="mm-modal-branch mm-branch-2">
+                        Concept 2
+                    </div>
+
+                    <div class="mm-modal-branch mm-branch-3">
+                        Concept 3
+                    </div>
+
+                    <div class="mm-modal-branch mm-branch-4">
+                        Concept 4
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="mindmap-modal-note"
+                    class="mm-modal-note">
+
+                    Select the chapter PDF to access the
+                    complete downloadable mind map.
+
+                </p>
+
+            </div>
+
+
+            <div class="mm-modal-actions">
+
+
+                <button
+                    id="mindmap-modal-close-bottom"
+                    class="btn btn-secondary"
+                    type="button">
+
+                    Close
+
+                </button>
+
+
+                <a
+                    id="mindmap-modal-pdf"
+                    class="btn btn-primary"
+                    href="#"
+                    target="_blank"
+                    rel="noopener">
+
+                    <i class="fa-solid fa-file-pdf"></i>
+
+                    Open PDF
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer
+        id="site-footer"
+        class="site-footer">
+
+
+        <div
+            id="footer-content"
+            class="footer-content">
+
+
+            <!-- Footer Brand -->
+
+            <div
+                id="footer-brand"
+                class="footer-brand">
+
+
+                <h2>
+
+                    <span>Edu</span>Nexus
+
+                </h2>
+
+
+                <p>
+
+                    Smart learning resources for students.
+                    Learn, revise and grow with EduNexus.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div
+                id="footer-quick-links"
+                class="footer-links">
+
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="notes.html">
+                    Notes
+                </a>
+
+
+                <a href="mind-maps.html">
+                    Mind Maps
+                </a>
+
+
+                <a href="quiz.html">
+                    Quiz
+                </a>
+
+
+                <a href="pyq.html">
+                    PYQs
+                </a>
+
+
+                <a href="videos.html">
+                    Videos
+                </a>
+
+            </div>
+
+
+
+            <!-- Resources -->
+
+            <div
+                id="footer-resources"
+                class="footer-links">
+
+
+                <h3>
+                    Resources
+                </h3>
+
+
+                <a href="about.html">
+                    About EduNexus
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            id="footer-bottom"
+            class="footer-bottom">
+
+
+            <p>
+
+                ©
+                <span id="current-year"></span>
+
+                EduNexus by Neeraj Pal.
+
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         MAIN JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="frontend/assets/js/script.js"
+        defer>
+    </script>
+
+
+
+    <!-- =====================================================
+         MIND MAP PAGE JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+
+                /* =================================================
+                   01. ELEMENT REFERENCES
+                ================================================= */
+
+                const searchInput =
+                    document.getElementById(
+                        "mindmaps-search"
+                    );
+
+
+                const filterButtons =
+                    document.querySelectorAll(
+                        ".mm-filter-btn"
+                    );
+
+
+                const cards =
+                    document.querySelectorAll(
+                        ".mm-card"
+                    );
+
+
+                const subjectSections =
+                    document.querySelectorAll(
+                        ".mm-subject-section"
+                    );
+
+
+                const emptyState =
+                    document.getElementById(
+                        "mindmaps-empty"
+                    );
+
+
+                const clearSearchButton =
+                    document.getElementById(
+                        "clear-mindmap-search"
+                    );
+
+
+                const modal =
+                    document.getElementById(
+                        "mindmap-modal"
+                    );
+
+
+                const modalTitle =
+                    document.getElementById(
+                        "mindmap-modal-title"
+                    );
+
+
+                const modalTopic =
+                    document.getElementById(
+                        "mindmap-modal-topic"
+                    );
+
+
+                const modalPdf =
+                    document.getElementById(
+                        "mindmap-modal-pdf"
+                    );
+
+
+                const modalClose =
+                    document.getElementById(
+                        "mindmap-modal-close"
+                    );
+
+
+                const modalCloseBottom =
+                    document.getElementById(
+                        "mindmap-modal-close-bottom"
+                    );
+
+
+                const modalOverlay =
+                    document.getElementById(
+                        "mindmap-modal-overlay"
+                    );
+
+
+                let activeFilter = "all";
+
+
+
+                /* =================================================
+                   02. PRELOADER
+                ================================================== */
+
+                const preloader =
+                    document.getElementById(
+                        "preloader"
+                    );
+
+
+                window.addEventListener(
+                    "load",
+                    function () {
+
+                        if (preloader) {
+
+                            setTimeout(
+                                function () {
+
+                                    preloader.classList.add(
+                                        "hide"
+                                    );
+
+                                },
+                                350
+                            );
+
+                        }
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   03. FILTER + SEARCH
+                ================================================== */
+
+                function filterMindMaps() {
+
+                    const searchTerm =
+                        searchInput
+                            ? searchInput.value
+                                .trim()
+                                .toLowerCase()
+                            : "";
+
+
+                    let visibleCount = 0;
+
+
+                    cards.forEach(
+                        function (card) {
+
+
+                            const cardClass =
+                                card.dataset.class || "";
+
+
+                            const searchData =
+                                card.dataset.search || "";
+
+
+                            const classMatch =
+                                activeFilter === "all" ||
+                                cardClass === activeFilter;
+
+
+                            const searchMatch =
+                                searchData
+                                    .toLowerCase()
+                                    .includes(searchTerm);
+
+
+                            const shouldShow =
+                                classMatch &&
+                                searchMatch;
+
+
+                            if (shouldShow) {
+
+                                card.hidden = false;
+
+                                visibleCount++;
+
+                            } else {
+
+                                card.hidden = true;
+
+                            }
+
+                        }
+                    );
+
+
+
+                    /* =============================================
+                       SUBJECT SECTIONS
+                    ============================================== */
+
+                    subjectSections.forEach(
+                        function (section) {
+
+
+                            const sectionCards =
+                                section.querySelectorAll(
+                                    ".mm-card"
+                                );
+
+
+                            let hasVisibleCard = false;
+
+
+                            sectionCards.forEach(
+                                function (card) {
+
+                                    if (!card.hidden) {
+
+                                        hasVisibleCard = true;
+
+                                    }
+
+                                }
+                            );
+
+
+                            section.hidden =
+                                !hasVisibleCard;
+
+                        }
+                    );
+
+
+
+                    /* =============================================
+                       EMPTY STATE
+                    ============================================== */
+
+                    if (emptyState) {
+
+                        emptyState.hidden =
+                            visibleCount !== 0;
+
+                    }
+
+                }
+
+
+
+                /* =================================================
+                   04. SEARCH EVENT
+                ================================================== */
+
+                if (searchInput) {
+
+                    searchInput.addEventListener(
+                        "input",
+                        filterMindMaps
+                    );
+
+                }
+
+
+
+                /* =================================================
+                   05. FILTER BUTTONS
+                ================================================== */
+
+                filterButtons.forEach(
+                    function (button) {
+
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+
+                                filterButtons.forEach(
+                                    function (item) {
+
+                                        item.classList.remove(
+                                            "active"
+                                        );
+
+                                    }
+                                );
+
+
+                                button.classList.add(
+                                    "active"
+                                );
+
+
+                                activeFilter =
+                                    button.dataset.filter ||
+                                    "all";
+
+
+                                filterMindMaps();
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   06. CLEAR SEARCH
+                ================================================== */
+
+                if (clearSearchButton) {
+
+                    clearSearchButton.addEventListener(
+                        "click",
+                        function () {
+
+
+                            if (searchInput) {
+
+                                searchInput.value = "";
+
+                            }
+
+
+                            activeFilter = "all";
+
+
+                            filterButtons.forEach(
+                                function (button) {
+
+                                    button.classList.toggle(
+                                        "active",
+                                        button.dataset.filter === "all"
+                                    );
+
+                                }
+                            );
+
+
+                            filterMindMaps();
+
+                        }
+                    );
+
+                }
+
+
+
+                /* =================================================
+                   07. OPEN MIND MAP MODAL
+                ================================================== */
+
+                const viewButtons =
+                    document.querySelectorAll(
+                        ".mm-action-view"
+                    );
+
+
+                viewButtons.forEach(
+                    function (button) {
+
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+
+                                const title =
+                                    button.dataset.mapTitle ||
+                                    "Mind Map";
+
+
+                                const card =
+                                    button.closest(
+                                        ".mm-card"
+                                    );
+
+
+                                const pdfLink =
+                                    card
+                                        ? card.querySelector(
+                                            ".mm-action-download"
+                                        )
+                                        : null;
+
+
+                                modalTitle.textContent =
+                                    title;
+
+
+                                modalTopic.textContent =
+                                    title;
+
+
+                                if (pdfLink) {
+
+                                    modalPdf.href =
+                                        pdfLink.href;
+
+                                } else {
+
+                                    modalPdf.href =
+                                        "#";
+
+                                }
+
+
+                                modal.hidden = false;
+
+                                document.body.style.overflow =
+                                    "hidden";
+
+
+                                setTimeout(
+                                    function () {
+
+                                        modalClose.focus();
+
+                                    },
+                                    50
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   08. CLOSE MODAL
+                ================================================== */
+
+                function closeModal() {
+
+                    modal.hidden = true;
+
+                    document.body.style.overflow = "";
+
+                }
+
+
+                if (modalClose) {
+
+                    modalClose.addEventListener(
+                        "click",
+                        closeModal
+                    );
+
+                }
+
+
+                if (modalCloseBottom) {
+
+                    modalCloseBottom.addEventListener(
+                        "click",
+                        closeModal
+                    );
+
+                }
+
+
+                if (modalOverlay) {
+
+                    modalOverlay.addEventListener(
+                        "click",
+                        closeModal
+                    );
+
+                }
+
+
+
+                /* =================================================
+                   09. ESCAPE KEY
+                ================================================== */
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+
+                        if (
+                            event.key === "Escape" &&
+                            !modal.hidden
+                        ) {
+
+                            closeModal();
+
+                        }
+
+                    }
+                );
+
+
+
+                /* =================================================
+                   10. CURRENT YEAR
+                ================================================== */
+
+                const currentYear =
+                    document.getElementById(
+                        "current-year"
+                    );
+
+
+                if (currentYear) {
+
+                    currentYear.textContent =
+                        new Date().getFullYear();
+
+                }
+
+
+
+                /* =================================================
+                   11. INITIAL FILTER
+                ================================================== */
+
+                filterMindMaps();
+
+            }
+        );
+
+    </script>
+
+
+<script src="api.js"></script>
+</body>
+
+</html>

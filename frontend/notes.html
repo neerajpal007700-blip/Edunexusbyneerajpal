@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EduNexus by Neeraj Pal - Class 9, Class 10 and board exam notes, chapter-wise study material and topper-style notes."
+    >
+
+    <meta
+        name="keywords"
+        content="EduNexus, Neeraj Pal, Class 9 notes, Class 10 notes, UP Board notes, study material, topper notes"
+    >
+
+    <meta name="author" content="Neeraj Pal">
+
+    <title>Notes | EduNexus by Neeraj Pal</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/logo/logo.png"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="responsive.css"
+    >
+
+    <style>
+
+        /* =================================================
+           NOTES PAGE
+           ================================================= */
+
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 80px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(108, 44, 255, 0.10),
+                    rgba(255, 61, 129, 0.08),
+                    rgba(0, 212, 255, 0.08)
+                );
+        }
+
+        .page-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: -150px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(108, 44, 255, 0.10);
+
+            filter: blur(10px);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+
+            max-width: 800px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 9px 16px;
+
+            margin-bottom: 18px;
+
+            border-radius: 999px;
+
+            background: rgba(108, 44, 255, 0.10);
+            color: #6c2cff;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .page-hero h1 {
+            margin: 0 0 16px;
+
+            font-family: "Poppins", sans-serif;
+
+            color: #101124;
+
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.1;
+        }
+
+        .page-hero h1 span {
+            color: #6c2cff;
+        }
+
+        .page-hero p {
+            max-width: 680px;
+
+            margin: auto;
+
+            color: #686b7d;
+
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+
+        /* =================================================
+           FILTERS
+           ================================================= */
+
+        .notes-section {
+            padding: 75px 0;
+        }
+
+        .notes-filter-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+
+            margin-bottom: 45px;
+        }
+
+        .notes-filter-btn {
+            padding: 11px 18px;
+
+            border: 1px solid rgba(108, 44, 255, 0.15);
+            border-radius: 999px;
+
+            background: #ffffff;
+            color: #55586b;
+
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .notes-filter-btn:hover {
+            transform: translateY(-2px);
+
+            border-color: #6c2cff;
+            color: #6c2cff;
+        }
+
+        .notes-filter-btn.active {
+            border-color: #6c2cff;
+
+            background: #6c2cff;
+            color: #ffffff;
+
+            box-shadow:
+                0 8px 20px rgba(108, 44, 255, 0.22);
+        }
+
+
+        /* =================================================
+           NOTES GRID
+           ================================================= */
+
+        .notes-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 24px;
+        }
+
+        .note-card {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 26px;
+
+            border: 1px solid rgba(108, 44, 255, 0.10);
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 10px 30px rgba(16, 17, 36, 0.07);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .note-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6c2cff,
+                    #ff3d81,
+                    #00d4ff
+                );
+        }
+
+        .note-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(108, 44, 255, 0.25);
+
+            box-shadow:
+                0 18px 40px rgba(108, 44, 255, 0.13);
+        }
+
+        .note-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(108, 44, 255, 0.12),
+                    rgba(255, 61, 129, 0.12)
+                );
+
+            color: #6c2cff;
+
+            font-size: 23px;
+        }
+
+        .note-card h3 {
+            margin: 0 0 9px;
+
+            color: #101124;
+
+            font-family: "Poppins", sans-serif;
+            font-size: 20px;
+        }
+
+        .note-card p {
+            min-height: 48px;
+
+            margin: 0 0 18px;
+
+            color: #686b7d;
+
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .note-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        .note-tag {
+            padding: 5px 9px;
+
+            border-radius: 7px;
+
+            background: #f4f2ff;
+            color: #6c2cff;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .note-tag.class-tag {
+            background: #fff0f5;
+            color: #ff3d81;
+        }
+
+        .note-button {
+            width: 100%;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            min-height: 44px;
+
+            border-radius: 10px;
+
+            background: #6c2cff;
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .note-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 9px 20px rgba(108, 44, 255, 0.25);
+        }
+
+
+        /* =================================================
+           COMING SOON
+           ================================================= */
+
+        .notes-coming-soon {
+            grid-column: 1 / -1;
+
+            padding: 55px 25px;
+
+            text-align: center;
+
+            border: 1px dashed rgba(108, 44, 255, 0.25);
+            border-radius: 20px;
+
+            background: rgba(108, 44, 255, 0.03);
+        }
+
+        .notes-coming-soon i {
+            margin-bottom: 15px;
+
+            color: #6c2cff;
+
+            font-size: 40px;
+        }
+
+        .notes-coming-soon h3 {
+            margin: 0 0 8px;
+
+            color: #101124;
+
+            font-size: 22px;
+        }
+
+        .notes-coming-soon p {
+            margin: 0;
+
+            color: #686b7d;
+
+            font-size: 14px;
+        }
+
+
+        /* =================================================
+           CTA
+           ================================================= */
+
+        .notes-cta {
+            padding: 0 0 80px;
+        }
+
+        .notes-cta-box {
+            position: relative;
+            overflow: hidden;
+
+            padding: 50px 35px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6c2cff,
+                    #ff3d81
+                );
+
+            color: #ffffff;
+
+            box-shadow:
+                0 18px 45px rgba(108, 44, 255, 0.22);
+        }
+
+        .notes-cta-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            right: -80px;
+            bottom: -100px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .notes-cta-box h2 {
+            position: relative;
+            z-index: 1;
+
+            margin: 0 0 10px;
+
+            font-family: "Poppins", sans-serif;
+            font-size: 30px;
+        }
+
+        .notes-cta-box p {
+            position: relative;
+            z-index: 1;
+
+            max-width: 650px;
+
+            margin: 0 auto 22px;
+
+            color: rgba(255, 255, 255, 0.88);
+
+            line-height: 1.7;
+        }
+
+        .notes-cta-box .btn {
+            position: relative;
+            z-index: 1;
+
+            background: #ffffff;
+            color: #6c2cff;
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+           ================================================= */
+
+        @media (max-width: 991px) {
+
+            .notes-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .page-hero {
+                padding: 65px 0;
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .notes-section {
+                padding: 55px 0;
+            }
+
+            .notes-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .page-hero {
+                padding: 55px 0;
+            }
+
+            .page-hero p {
+                font-size: 14px;
+            }
+
+            .notes-filter-wrapper {
+                margin-bottom: 30px;
+            }
+
+            .notes-cta-box {
+                padding: 40px 22px;
+            }
+
+            .notes-cta-box h2 {
+                font-size: 25px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .page-hero h1 {
+                font-size: 34px;
+            }
+
+            .notes-filter-btn {
+                font-size: 12px;
+                padding: 9px 13px;
+            }
+
+            .note-card {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         PRELOADER
+         ===================================================== -->
+
+    <div id="preloader">
+
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOP LOGO
+         ===================================================== -->
+
+    <header class="top-logo-section">
+
+        <div class="container">
+
+            <a href="../index.html" class="logo-wrapper">
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         BANNER
+         ===================================================== -->
+
+    <section class="top-banner-section">
+
+        <div class="container">
+
+            <a
+                href="../index.html"
+                class="hero-banner-link"
+            >
+                <div class="banner-fallback">
+
+                    <div>
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <h2>
+                            EduNexus by Neeraj Pal
+                        </h2>
+
+                        <p>
+                            Learn Smart. Study Better. Crack Exams.
+                        </p>
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar" id="mainNavbar">
+
+        <div class="container navbar-container">
+
+            <a
+                href="../index.html"
+                class="navbar-brand"
+            >
+                EduNexus
+            </a>
+
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div
+                class="navbar-menu"
+                id="navbarMenu"
+            >
+
+                <a href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+                <a
+                    href="notes.html"
+                    class="active"
+                >
+                    <i class="fa-solid fa-book-open"></i>
+                    Notes
+                </a>
+
+                <a href="quizzes.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Quizzes
+                </a>
+
+                <a href="mock-tests.html">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    Mock Tests
+                </a>
+
+                <a href="pyq.html">
+                    <i class="fa-solid fa-file-lines"></i>
+                    PYQs
+                </a>
+
+                <a href="mind-maps.html">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    Mind Maps
+                </a>
+
+                <a href="live-classes.html">
+                    <i class="fa-solid fa-video"></i>
+                    Live Classes
+                </a>
+
+                <a href="videos.html">
+                    <i class="fa-brands fa-youtube"></i>
+                    Videos
+                </a>
+
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About
+                </a>
+
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact
+                </a>
+
+                <a
+                    href="login.html"
+                    class="nav-login-btn"
+                >
+                    <i class="fa-solid fa-user"></i>
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PAGE HERO
+         ===================================================== -->
+
+    <main>
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-content">
+
+                    <span class="page-badge">
+                        <i class="fa-solid fa-book-open"></i>
+                        EduNexus Study Material
+                    </span>
+
+                    <h1>
+                        Learn From
+                        <span>Better Notes.</span>
+                    </h1>
+
+                    <p>
+                        Find structured, chapter-wise and
+                        topper-style notes designed to make
+                        your preparation simple, organized
+                        and exam-focused.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTES
+             ================================================= -->
+
+        <section class="notes-section">
+
+            <div class="container">
+
+                <!-- Filters -->
+
+                <div class="notes-filter-wrapper">
+
+                    <button
+                        class="notes-filter-btn active"
+                        type="button"
+                        data-filter="all"
+                    >
+                        All Notes
+                    </button>
+
+                    <button
+                        class="notes-filter-btn"
+                        type="button"
+                        data-filter="class-9"
+                    >
+                        Class 9
+                    </button>
+
+                    <button
+                        class="notes-filter-btn"
+                        type="button"
+                        data-filter="class-10"
+                    >
+                        Class 10
+                    </button>
+
+                    <button
+                        class="notes-filter-btn"
+                        type="button"
+                        data-filter="science"
+                    >
+                        Science
+                    </button>
+
+                    <button
+                        class="notes-filter-btn"
+                        type="button"
+                        data-filter="math"
+                    >
+                        Mathematics
+                    </button>
+
+                </div>
+
+
+                <!-- Notes Grid -->
+
+                <div class="notes-grid" id="notesGrid">
+
+
+                    <!-- ================================
+                         CLASS 9 SCIENCE
+                         ================================= -->
+
+                    <article
+                        class="note-card"
+                        data-category="class-9 science"
+                    >
+
+                        <div class="note-icon">
+                            <i class="fa-solid fa-flask"></i>
+                        </div>
+
+                        <h3>
+                            Class 9 Science
+                        </h3>
+
+                        <p>
+                            Chapter-wise Science notes
+                            with important concepts,
+                            definitions and exam-focused
+                            explanations.
+                        </p>
+
+                        <div class="note-meta">
+
+                            <span class="note-tag class-tag">
+                                Class 9
+                            </span>
+
+                            <span class="note-tag">
+                                Science
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="note-button"
+                            data-coming-soon="true"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            Open Notes
+                        </a>
+
+                    </article>
+
+
+                    <!-- ================================
+                         CLASS 9 MATHEMATICS
+                         ================================= -->
+
+                    <article
+                        class="note-card"
+                        data-category="class-9 math"
+                    >
+
+                        <div class="note-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <h3>
+                            Class 9 Mathematics
+                        </h3>
+
+                        <p>
+                            Concept-based Mathematics
+                            notes with formulas,
+                            important methods and
+                            problem-solving tips.
+                        </p>
+
+                        <div class="note-meta">
+
+                            <span class="note-tag class-tag">
+                                Class 9
+                            </span>
+
+                            <span class="note-tag">
+                                Mathematics
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="note-button"
+                            data-coming-soon="true"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            Open Notes
+                        </a>
+
+                    </article>
+
+
+                    <!-- ================================
+                         CLASS 10 PHYSICS
+                         ================================= -->
+
+                    <article
+                        class="note-card"
+                        data-category="class-10 science"
+                    >
+
+                        <div class="note-icon">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+
+                        <h3>
+                            Class 10 Physics
+                        </h3>
+
+                        <p>
+                            Important Physics concepts,
+                            formulas and structured
+                            explanations for board
+                            examination preparation.
+                        </p>
+
+                        <div class="note-meta">
+
+                            <span class="note-tag class-tag">
+                                Class 10
+                            </span>
+
+                            <span class="note-tag">
+                                Physics
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="note-button"
+                            data-coming-soon="true"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            Open Notes
+                        </a>
+
+                    </article>
+
+
+                    <!-- ================================
+                         CLASS 10 ENGLISH
+                         ================================= -->
+
+                    <article
+                        class="note-card"
+                        data-category="class-10 english"
+                    >
+
+                        <div class="note-icon">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+
+                        <h3>
+                            Class 10 English Grammar
+                        </h3>
+
+                        <p>
+                            Easy-to-understand English
+                            Grammar notes with rules,
+                            examples and exam-oriented
+                            practice.
+                        </p>
+
+                        <div class="note-meta">
+
+                            <span class="note-tag class-tag">
+                                Class 10
+                            </span>
+
+                            <span class="note-tag">
+                                English
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="note-button"
+                            data-coming-soon="true"
+                        >
+                            <i class="fa-solid fa-book-open"></i>
+                            Open Notes
+                        </a>
+
+                    </article>
+
+
+                    <!-- ================================
+                         FUTURE NOTES
+                         ================================= -->
+
+                    <div class="notes-coming-soon">
+
+                        <i class="fa-solid fa-folder-open"></i>
+
+                        <h3>
+                            More Notes Are Coming
+                        </h3>
+
+                        <p>
+                            New classes, subjects,
+                            chapters and PDF notes
+                            will be added here through
+                            the EduNexus content system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+             ================================================= -->
+
+        <section class="notes-cta">
+
+            <div class="container">
+
+                <div class="notes-cta-box">
+
+                    <h2>
+                        Study Smart With EduNexus
+                    </h2>
+
+                    <p>
+                        Explore quizzes, mock tests,
+                        previous year questions,
+                        mind maps and video classes
+                        to strengthen your preparation.
+                    </p>
+
+                    <a
+                        href="../index.html"
+                        class="btn"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+
+                    <h3>
+                        EduNexus
+                    </h3>
+
+                    <p>
+                        Learn Smart. Study Better.
+                        Crack Exams.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="notes.html">
+                        Notes
+                    </a>
+
+                    <a href="quizzes.html">
+                        Quizzes
+                    </a>
+
+                    <a href="mock-tests.html">
+                        Mock Tests
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Resources
+                    </h4>
+
+                    <a href="pyq.html">
+                        PYQs
+                    </a>
+
+                    <a href="mind-maps.html">
+                        Mind Maps
+                    </a>
+
+                    <a href="videos.html">
+                        Videos
+                    </a>
+
+                    <a href="live-classes.html">
+                        Live Classes
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Contact
+                    </h4>
+
+                    <a
+                        href="mailto:supportteamedunexus@gmail.com"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                        Support Team
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    ©
+                    <span id="currentYear"></span>
+                    EduNexus by Neeraj Pal.
+                    All rights reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BACK TO TOP
+         ===================================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="main.js"
+    ></script>
+
+
+    <!-- =====================================================
+         NOTES FILTER
+         ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const filterButtons =
+                    document.querySelectorAll(
+                        ".notes-filter-btn"
+                    );
+
+                const noteCards =
+                    document.querySelectorAll(
+                        ".note-card"
+                    );
+
+
+                filterButtons.forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                const filter =
+                                    button.dataset.filter;
+
+
+                                filterButtons.forEach(
+                                    function (btn) {
+
+                                        btn.classList.remove(
+                                            "active"
+                                        );
+
+                                    }
+                                );
+
+
+                                button.classList.add(
+                                    "active"
+                                );
+
+
+                                noteCards.forEach(
+                                    function (card) {
+
+                                        const category =
+                                            card.dataset.category ||
+                                            "";
+
+                                        if (
+                                            filter === "all" ||
+                                            category.includes(filter)
+                                        ) {
+
+                                            card.style.display =
+                                                "";
+
+                                        } else {
+
+                                            card.style.display =
+                                                "none";
+
+                                        }
+
+                                    }
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* -----------------------------------------
+                   Coming Soon Buttons
+                   ----------------------------------------- */
+
+                const comingSoonButtons =
+                    document.querySelectorAll(
+                        "[data-coming-soon='true']"
+                    );
+
+
+                comingSoonButtons.forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function (event) {
+
+                                event.preventDefault();
+
+                                alert(
+                                    "This notes section will be available soon through EduNexus."
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+<script src="api.js"></script>
+</body>
+
+</html>

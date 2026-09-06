@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Login to EduNexus by Neeraj Pal">
+
+    <meta name="author"
+          content="Neeraj Pal">
+
+    <title>Login | EduNexus by Neeraj</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           EDUNEXUS PROFESSIONAL LOGIN
+           HTML + CSS + JS — SINGLE FILE
+        ===================================================== */
+
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+            --primary: #6c2cff;
+            --primary-dark: #4b16c7;
+            --primary-light: #8b5cf6;
+
+            --dark: #111827;
+            --text: #1f2937;
+            --muted: #6b7280;
+
+            --border: #e5e7eb;
+            --bg: #f7f7fb;
+            --white: #ffffff;
+
+            --success: #059669;
+            --danger: #dc2626;
+
+            --shadow:
+                0 25px 70px rgba(31, 24, 65, 0.12);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(108, 44, 255, 0.12),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    rgba(139, 92, 246, 0.12),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            overflow-x: hidden;
+        }
+
+
+        button,
+        input {
+            font: inherit;
+        }
+
+
+        button {
+            cursor: pointer;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           PAGE
+        ===================================================== */
+
+        .login-page {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 35px 20px;
+        }
+
+
+        .login-container {
+            width: 100%;
+            max-width: 1120px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: var(--white);
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+
+            border: 1px solid rgba(108, 44, 255, 0.08);
+        }
+
+
+        /* =====================================================
+           LEFT BRAND PANEL
+        ===================================================== */
+
+        .brand-panel {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 65px 55px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #6c2cff 0%,
+                    #5319d4 48%,
+                    #3d109f 100%
+                );
+
+            overflow: hidden;
+        }
+
+
+        .brand-panel::before {
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            border-radius: 50%;
+
+            top: -150px;
+            right: -120px;
+
+            background: rgba(255,255,255,0.08);
+        }
+
+
+        .brand-panel::after {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            bottom: -150px;
+            left: -120px;
+
+            background: rgba(255,255,255,0.07);
+        }
+
+
+        .brand-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 55px;
+
+            color: white;
+        }
+
+
+        .brand-logo-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.16);
+
+            backdrop-filter: blur(10px);
+
+            font-size: 21px;
+        }
+
+
+        .brand-logo-text {
+            display: flex;
+            flex-direction: column;
+
+            font-size: 25px;
+            font-weight: 800;
+
+            line-height: 1;
+        }
+
+
+        .brand-logo-text small {
+            margin-top: 5px;
+
+            font-size: 10px;
+            font-weight: 500;
+
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            opacity: 0.78;
+        }
+
+
+        /* =====================================================
+           BRAND CONTENT
+        ===================================================== */
+
+        .brand-panel h1 {
+            max-width: 480px;
+
+            font-size: 45px;
+            line-height: 1.12;
+
+            letter-spacing: -1.2px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .brand-panel h1 span {
+            color: #ddd0ff;
+        }
+
+
+        .brand-description {
+            max-width: 470px;
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            color: rgba(255,255,255,0.82);
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =====================================================
+           BENEFITS
+        ===================================================== */
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 14px;
+
+            color: rgba(255,255,255,0.92);
+        }
+
+
+        .benefit-icon {
+            width: 31px;
+            height: 31px;
+
+            flex: 0 0 31px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.13);
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           LOGIN PANEL
+        ===================================================== */
+
+        .login-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 55px;
+        }
+
+
+        .login-content {
+            width: 100%;
+            max-width: 430px;
+        }
+
+
+        .login-heading {
+            margin-bottom: 30px;
+        }
+
+
+        .login-heading h2 {
+            font-size: 31px;
+
+            color: var(--dark);
+
+            margin-bottom: 8px;
+        }
+
+
+        .login-heading p {
+            color: var(--muted);
+
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           ROLE SELECTOR
+        ===================================================== */
+
+        .role-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+            margin-bottom: 25px;
+
+            padding: 5px;
+
+            border-radius: 13px;
+
+            background: #f4f2fa;
+        }
+
+
+        .role-btn {
+            border: none;
+
+            background: transparent;
+
+            padding: 11px 10px;
+
+            border-radius: 9px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+
+        .role-btn i {
+            margin-right: 6px;
+        }
+
+
+        .role-btn.active {
+            color: var(--primary);
+
+            background: white;
+
+            box-shadow:
+                0 3px 12px rgba(31,24,65,0.08);
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 8px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            color: var(--text);
+        }
+
+
+        .input-box {
+            position: relative;
+        }
+
+
+        .input-icon {
+            position: absolute;
+
+            left: 16px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #9ca3af;
+
+            pointer-events: none;
+        }
+
+
+        .form-input {
+            width: 100%;
+
+            height: 52px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            outline: none;
+
+            background: #fff;
+
+            color: var(--dark);
+
+            padding: 0 45px;
+
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+
+        .form-input::placeholder {
+            color: #a5a9b4;
+        }
+
+
+        .form-input:focus {
+            border-color: var(--primary);
+
+            box-shadow:
+                0 0 0 4px rgba(108,44,255,0.08);
+        }
+
+
+        .password-toggle {
+            position: absolute;
+
+            right: 14px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #9ca3af;
+
+            padding: 5px;
+        }
+
+
+        .password-toggle:hover {
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        .field-error {
+            display: block;
+
+            min-height: 17px;
+
+            margin-top: 5px;
+
+            color: var(--danger);
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           OPTIONS
+        ===================================================== */
+
+        .form-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+
+        .remember {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            cursor: pointer;
+        }
+
+
+        .remember input {
+            width: 15px;
+            height: 15px;
+
+            accent-color: var(--primary);
+        }
+
+
+        .forgot-link {
+            color: var(--primary);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-btn {
+            width: 100%;
+            height: 53px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            font-size: 14px;
+            font-weight: 700;
+
+            box-shadow:
+                0 10px 25px rgba(108,44,255,0.22);
+
+            transition: 0.25s ease;
+        }
+
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px rgba(108,44,255,0.28);
+        }
+
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+
+        .login-btn.loading {
+            pointer-events: none;
+            opacity: 0.75;
+        }
+
+
+        /* =====================================================
+           STATUS MESSAGE
+        ===================================================== */
+
+        .status-message {
+            display: none;
+
+            align-items: center;
+            gap: 9px;
+
+            padding: 13px 14px;
+
+            margin-top: 18px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        .status-message.show {
+            display: flex;
+        }
+
+
+        .status-message.success {
+            color: var(--success);
+
+            background: #ecfdf5;
+
+            border: 1px solid #a7f3d0;
+        }
+
+
+        .status-message.error {
+            color: var(--danger);
+
+            background: #fef2f2;
+
+            border: 1px solid #fecaca;
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            margin: 27px 0;
+        }
+
+
+        .divider::before,
+        .divider::after {
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background: var(--border);
+        }
+
+
+        .divider span {
+            color: #9ca3af;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           REGISTER
+        ===================================================== */
+
+        .register-text {
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        .register-text a {
+            color: var(--primary);
+
+            font-weight: 700;
+        }
+
+
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           BACK HOME
+        ===================================================== */
+
+        .back-home {
+            display: flex;
+            justify-content: center;
+
+            margin-top: 25px;
+        }
+
+
+        .back-home a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            transition: 0.2s ease;
+        }
+
+
+        .back-home a:hover {
+            color: var(--primary);
+        }
+
+
+        /* =====================================================
+           SECURITY NOTE
+        ===================================================== */
+
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            margin-top: 25px;
+
+            color: #9ca3af;
+
+            font-size: 11px;
+        }
+
+
+        .security-note i {
+            color: var(--success);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE — TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .login-container {
+                grid-template-columns: 1fr;
+
+                max-width: 520px;
+            }
+
+
+            .brand-panel {
+                padding: 40px 40px;
+
+                min-height: auto;
+            }
+
+
+            .brand-logo {
+                margin-bottom: 30px;
+            }
+
+
+            .brand-panel h1 {
+                font-size: 34px;
+            }
+
+
+            .brand-description {
+                margin-bottom: 25px;
+            }
+
+
+            .benefits {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .login-panel {
+                padding: 40px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE — MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .login-page {
+                padding: 15px;
+            }
+
+
+            .login-container {
+                border-radius: 20px;
+            }
+
+
+            .brand-panel {
+                padding: 32px 25px;
+            }
+
+
+            .brand-logo {
+                margin-bottom: 28px;
+            }
+
+
+            .brand-panel h1 {
+                font-size: 29px;
+
+                letter-spacing: -0.5px;
+            }
+
+
+            .brand-description {
+                font-size: 14px;
+
+                line-height: 1.7;
+            }
+
+
+            .benefits {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+
+            .login-panel {
+                padding: 35px 22px;
+            }
+
+
+            .login-heading h2 {
+                font-size: 27px;
+            }
+
+
+            .form-options {
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .brand-panel {
+                padding: 28px 20px;
+            }
+
+
+            .login-panel {
+                padding: 30px 17px;
+            }
+
+
+            .role-btn {
+                font-size: 12px;
+            }
+
+
+            .form-options {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+    <script src="api.js"></script>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         LOGIN PAGE
+    ===================================================== -->
+
+    <main class="login-page">
+
+
+        <div class="login-container">
+
+
+            <!-- =================================================
+                 BRAND PANEL
+            ================================================== -->
+
+            <section class="brand-panel">
+
+                <div class="brand-content">
+
+
+                    <a href="../index.html"
+                       class="brand-logo">
+
+                        <span class="brand-logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+
+                        <span class="brand-logo-text">
+                            EduNexus
+                            <small>by Neeraj</small>
+                        </span>
+
+                    </a>
+
+
+                    <h1>
+                        Welcome back to
+                        <span>EduNexus.</span>
+                    </h1>
+
+
+                    <p class="brand-description">
+                        Continue your learning journey with
+                        courses, notes, quizzes, mind maps,
+                        videos and live classes — all in one place.
+                    </p>
+
+
+                    <div class="benefits">
+
+                        <div class="benefit">
+
+                            <span class="benefit-icon">
+                                <i class="fas fa-book-open"></i>
+                            </span>
+
+                            Access your courses
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <span class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+
+                            Track your progress
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <span class="benefit-icon">
+                                <i class="fas fa-circle-question"></i>
+                            </span>
+
+                            Practice with quizzes
+
+                        </div>
+
+
+                        <div class="benefit">
+
+                            <span class="benefit-icon">
+                                <i class="fas fa-video"></i>
+                            </span>
+
+                            Join live classes
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOGIN PANEL
+            ================================================== -->
+
+            <section class="login-panel">
+
+                <div class="login-content">
+
+
+                    <div class="login-heading">
+
+                        <h2>
+                            Sign in
+                        </h2>
+
+                        <p>
+                            Enter your account details to continue.
+                        </p>
+
+                    </div>
+
+
+                    <!-- ROLE -->
+
+                    <div class="role-selector">
+
+                        <button type="button"
+                                class="role-btn active"
+                                data-role="student">
+
+                            <i class="fas fa-user-graduate"></i>
+
+                            Student
+
+                        </button>
+
+
+                        <button type="button"
+                                class="role-btn"
+                                data-role="admin">
+
+                            <i class="fas fa-shield-halved"></i>
+
+                            Admin
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- FORM -->
+
+                    <form id="loginForm"
+                          novalidate>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label class="form-label"
+                                   for="email">
+
+                                Email Address
+
+                            </label>
+
+
+                            <div class="input-box">
+
+                                <i class="fas fa-envelope input-icon"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-input"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <small class="field-error"
+                                   id="emailError"></small>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="form-group">
+
+                            <label class="form-label"
+                                   for="password">
+
+                                Password
+
+                            </label>
+
+
+                            <div class="input-box">
+
+                                <i class="fas fa-lock input-icon"></i>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    class="form-input"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="passwordToggle"
+                                    aria-label="Show password">
+
+                                    <i class="fas fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+
+                            <small class="field-error"
+                                   id="passwordError"></small>
+
+                        </div>
+
+
+                        <!-- OPTIONS -->
+
+                        <div class="form-options">
+
+                            <label class="remember">
+
+                                <input
+                                    type="checkbox"
+                                    id="remember"
+                                >
+
+                                Remember me
+
+                            </label>
+
+
+                            <a href="#"
+                               class="forgot-link"
+                               id="forgotPassword">
+
+                                Forgot password?
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="login-btn"
+                            id="loginBtn">
+
+                            <i class="fas fa-right-to-bracket"></i>
+
+                            <span id="loginBtnText">
+                                Sign In
+                            </span>
+
+                        </button>
+
+
+                        <!-- STATUS -->
+
+                        <div
+                            class="status-message"
+                            id="statusMessage"
+                            role="alert"
+                            aria-live="polite">
+
+                        </div>
+
+                    </form>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="divider">
+
+                        <span>New to EduNexus?</span>
+
+                    </div>
+
+
+                    <!-- REGISTER -->
+
+                    <p class="register-text">
+
+                        Don't have an account?
+
+                        <a href="signup.html">
+                            Create Account
+                        </a>
+
+                    </p>
+
+
+                    <!-- HOME -->
+
+                    <div class="back-home">
+
+                        <a href="../index.html">
+
+                            <i class="fas fa-arrow-left"></i>
+
+                            Back to EduNexus
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="security-note">
+
+                        <i class="fas fa-shield-halved"></i>
+
+                        Your account information is securely handled.
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script src="login.js"></script>
+
+</body>
+</html>

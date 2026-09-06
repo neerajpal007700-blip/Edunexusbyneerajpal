@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EduNexus by Neeraj Pal - Previous Year Question Papers for Class 9 and Class 10 board exam preparation."
+    >
+
+    <meta
+        name="keywords"
+        content="EduNexus PYQ, previous year question papers, Class 10 PYQ, Class 9 PYQ, UP Board PYQ, board exam papers"
+    >
+
+    <meta name="author" content="Neeraj Pal">
+
+    <title>PYQs | EduNexus by Neeraj Pal</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="../assets/images/logo/logo.png"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="responsive.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           PYQ HERO
+           ===================================================== */
+
+        .pyq-page-hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 80px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(108, 44, 255, 0.10),
+                    rgba(0, 212, 255, 0.08),
+                    rgba(255, 61, 129, 0.08)
+                );
+        }
+
+        .pyq-page-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            top: -180px;
+            left: -120px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0, 212, 255, 0.10);
+
+            filter: blur(8px);
+        }
+
+        .pyq-hero-content {
+            position: relative;
+            z-index: 1;
+
+            max-width: 820px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .pyq-badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 9px 16px;
+
+            margin-bottom: 18px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(108, 44, 255, 0.10);
+
+            color: #6c2cff;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+        .pyq-hero-content h1 {
+            margin: 0 0 16px;
+
+            color: #101124;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size:
+                clamp(34px, 5vw, 58px);
+
+            line-height: 1.1;
+        }
+
+        .pyq-hero-content h1 span {
+            color: #6c2cff;
+        }
+
+        .pyq-hero-content p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #686b7d;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           PYQ SECTION
+           ===================================================== */
+
+        .pyq-section {
+            padding: 75px 0;
+        }
+
+
+        /* =====================================================
+           FILTERS
+           ===================================================== */
+
+        .pyq-filters {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-bottom: 42px;
+        }
+
+        .pyq-filter {
+            padding: 11px 17px;
+
+            border: 1px solid
+                rgba(108, 44, 255, 0.15);
+
+            border-radius: 999px;
+
+            background: #ffffff;
+
+            color: #55586b;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .pyq-filter:hover {
+            transform: translateY(-2px);
+
+            color: #6c2cff;
+
+            border-color: #6c2cff;
+        }
+
+        .pyq-filter.active {
+            background: #6c2cff;
+
+            color: #ffffff;
+
+            border-color: #6c2cff;
+
+            box-shadow:
+                0 8px 20px
+                rgba(108, 44, 255, 0.20);
+        }
+
+
+        /* =====================================================
+           PYQ GRID
+           ===================================================== */
+
+        .pyq-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 24px;
+        }
+
+
+        /* =====================================================
+           PYQ CARD
+           ===================================================== */
+
+        .pyq-card {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 27px;
+
+            border: 1px solid
+                rgba(108, 44, 255, 0.10);
+
+            border-radius: 20px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 10px 30px
+                rgba(16, 17, 36, 0.07);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .pyq-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #6c2cff,
+                    #ff3d81,
+                    #00d4ff
+                );
+        }
+
+        .pyq-card:hover {
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(108, 44, 255, 0.25);
+
+            box-shadow:
+                0 18px 40px
+                rgba(108, 44, 255, 0.13);
+        }
+
+
+        /* =====================================================
+           ICON
+           ===================================================== */
+
+        .pyq-icon {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 19px;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(108, 44, 255, 0.12),
+                    rgba(0, 212, 255, 0.12)
+                );
+
+            color: #6c2cff;
+
+            font-size: 24px;
+        }
+
+
+        /* =====================================================
+           CARD CONTENT
+           ===================================================== */
+
+        .pyq-card h3 {
+            margin: 0 0 9px;
+
+            color: #101124;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 20px;
+
+            line-height: 1.4;
+        }
+
+        .pyq-card p {
+            min-height: 50px;
+
+            margin: 0 0 17px;
+
+            color: #686b7d;
+
+            font-size: 14px;
+
+            line-height: 1.65;
+        }
+
+
+        /* =====================================================
+           META TAGS
+           ===================================================== */
+
+        .pyq-meta {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+        .pyq-tag {
+            padding: 5px 9px;
+
+            border-radius: 7px;
+
+            background: #f4f2ff;
+
+            color: #6c2cff;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+        .pyq-tag.class-tag {
+            background: #fff0f5;
+
+            color: #ff3d81;
+        }
+
+        .pyq-tag.year-tag {
+            background: #ecfbff;
+
+            color: #008eac;
+        }
+
+        .pyq-tag.board-tag {
+            background: #f2fff6;
+
+            color: #159447;
+        }
+
+
+        /* =====================================================
+           BUTTON
+           ===================================================== */
+
+        .pyq-actions {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 9px;
+        }
+
+        .pyq-btn {
+            min-height: 43px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            padding: 9px 12px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .pyq-btn-primary {
+            border: 0;
+
+            background: #6c2cff;
+
+            color: #ffffff;
+        }
+
+        .pyq-btn-primary:hover {
+            transform: translateY(-2px);
+
+            background: #5920e8;
+
+            box-shadow:
+                0 8px 18px
+                rgba(108, 44, 255, 0.22);
+        }
+
+        .pyq-btn-secondary {
+            border: 1px solid
+                rgba(108, 44, 255, 0.18);
+
+            background: #ffffff;
+
+            color: #6c2cff;
+        }
+
+        .pyq-btn-secondary:hover {
+            transform: translateY(-2px);
+
+            background: #f7f4ff;
+        }
+
+
+        /* =====================================================
+           EMPTY / FUTURE CONTENT
+           ===================================================== */
+
+        .pyq-coming-soon {
+            grid-column: 1 / -1;
+
+            padding: 55px 25px;
+
+            text-align: center;
+
+            border: 1px dashed
+                rgba(108, 44, 255, 0.25);
+
+            border-radius: 20px;
+
+            background:
+                rgba(108, 44, 255, 0.03);
+        }
+
+        .pyq-coming-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 16px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(108, 44, 255, 0.10);
+
+            color: #6c2cff;
+
+            font-size: 27px;
+        }
+
+        .pyq-coming-soon h3 {
+            margin: 0 0 9px;
+
+            color: #101124;
+
+            font-size: 22px;
+        }
+
+        .pyq-coming-soon p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #686b7d;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           INFO SECTION
+           ===================================================== */
+
+        .pyq-info-section {
+            padding: 0 0 75px;
+        }
+
+        .pyq-info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        .pyq-info-card {
+            padding: 27px;
+
+            border: 1px solid
+                rgba(108, 44, 255, 0.08);
+
+            border-radius: 18px;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 8px 25px
+                rgba(16, 17, 36, 0.06);
+        }
+
+        .pyq-info-card i {
+            display: inline-flex;
+
+            margin-bottom: 14px;
+
+            color: #6c2cff;
+
+            font-size: 25px;
+        }
+
+        .pyq-info-card h3 {
+            margin: 0 0 8px;
+
+            color: #101124;
+
+            font-size: 17px;
+        }
+
+        .pyq-info-card p {
+            margin: 0;
+
+            color: #686b7d;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           CTA
+           ===================================================== */
+
+        .pyq-cta {
+            padding: 0 0 80px;
+        }
+
+        .pyq-cta-box {
+            padding: 50px 35px;
+
+            border-radius: 25px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #101124,
+                    #252750
+                );
+
+            color: #ffffff;
+
+            box-shadow:
+                0 18px 45px
+                rgba(16, 17, 36, 0.18);
+        }
+
+        .pyq-cta-box h2 {
+            margin: 0 0 10px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 30px;
+        }
+
+        .pyq-cta-box p {
+            max-width: 650px;
+
+            margin: 0 auto 23px;
+
+            color:
+                rgba(255, 255, 255, 0.80);
+
+            line-height: 1.7;
+        }
+
+        .pyq-cta-box .btn {
+            background: #ffffff;
+
+            color: #6c2cff;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .pyq-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .pyq-info-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .pyq-page-hero {
+                padding: 55px 0;
+            }
+
+            .pyq-hero-content p {
+                font-size: 14px;
+            }
+
+            .pyq-section {
+                padding: 55px 0;
+            }
+
+            .pyq-grid {
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+            .pyq-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pyq-cta-box {
+                padding: 40px 22px;
+            }
+
+            .pyq-cta-box h2 {
+                font-size: 25px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .pyq-hero-content h1 {
+                font-size: 34px;
+            }
+
+            .pyq-filter {
+                padding: 9px 13px;
+
+                font-size: 12px;
+            }
+
+            .pyq-card {
+                padding: 22px;
+            }
+
+            .pyq-actions {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PRELOADER
+         ===================================================== -->
+
+    <div id="preloader">
+
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGO
+         ===================================================== -->
+
+    <header class="top-logo-section">
+
+        <div class="container">
+
+            <a
+                href="../index.html"
+                class="logo-wrapper"
+            >
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         BANNER
+         ===================================================== -->
+
+    <section class="top-banner-section">
+
+        <div class="container">
+
+            <a
+                href="../index.html"
+                class="hero-banner-link"
+            >
+                <div class="banner-fallback">
+
+                    <div>
+
+                        <i
+                            class="fa-solid fa-graduation-cap"
+                        ></i>
+
+                        <h2>
+                            EduNexus by Neeraj Pal
+                        </h2>
+
+                        <p>
+                            Learn Smart. Study Better. Crack Exams.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav
+        class="navbar"
+        id="mainNavbar"
+    >
+
+        <div class="container navbar-container">
+
+            <a
+                href="../index.html"
+                class="navbar-brand"
+            >
+                EduNexus
+            </a>
+
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div
+                class="navbar-menu"
+                id="navbarMenu"
+            >
+
+                <a href="../index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+                <a href="notes.html">
+                    <i class="fa-solid fa-book-open"></i>
+                    Notes
+                </a>
+
+                <a href="quizzes.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Quizzes
+                </a>
+
+                <a href="mock-tests.html">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    Mock Tests
+                </a>
+
+                <a
+                    href="pyq.html"
+                    class="active"
+                >
+                    <i class="fa-solid fa-file-lines"></i>
+                    PYQs
+                </a>
+
+                <a href="mind-maps.html">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    Mind Maps
+                </a>
+
+                <a href="live-classes.html">
+                    <i class="fa-solid fa-video"></i>
+                    Live Classes
+                </a>
+
+                <a href="videos.html">
+                    <i class="fa-brands fa-youtube"></i>
+                    Videos
+                </a>
+
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                    About
+                </a>
+
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact
+                </a>
+
+                <a
+                    href="login.html"
+                    class="nav-login-btn"
+                >
+                    <i class="fa-solid fa-user"></i>
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="pyq-page-hero">
+
+            <div class="container">
+
+                <div class="pyq-hero-content">
+
+                    <span class="pyq-badge">
+
+                        <i
+                            class="fa-solid fa-file-lines"
+                        ></i>
+
+                        Previous Year Questions
+
+                    </span>
+
+
+                    <h1>
+
+                        Solve Real
+                        <span>Exam Questions.</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Practice previous year question papers
+                        to understand exam patterns, important
+                        topics and question trends.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PYQ CONTENT
+             ================================================= -->
+
+        <section class="pyq-section">
+
+            <div class="container">
+
+
+                <!-- FILTERS -->
+
+                <div class="pyq-filters">
+
+                    <button
+                        type="button"
+                        class="pyq-filter active"
+                        data-filter="all"
+                    >
+                        All Papers
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pyq-filter"
+                        data-filter="class-9"
+                    >
+                        Class 9
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pyq-filter"
+                        data-filter="class-10"
+                    >
+                        Class 10
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pyq-filter"
+                        data-filter="up-board"
+                    >
+                        UP Board
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pyq-filter"
+                        data-filter="science"
+                    >
+                        Science
+                    </button>
+
+                    <button
+                        type="button"
+                        class="pyq-filter"
+                        data-filter="math"
+                    >
+                        Mathematics
+                    </button>
+
+                </div>
+
+
+                <!-- PYQ GRID -->
+
+                <div
+                    class="pyq-grid"
+                    id="pyqGrid"
+                >
+
+
+                    <!-- =====================================
+                         CLASS 10 SCIENCE
+                         ===================================== -->
+
+                    <article
+                        class="pyq-card"
+                        data-category="class-10 up-board science"
+                    >
+
+                        <div class="pyq-icon">
+
+                            <i
+                                class="fa-solid fa-atom"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+                            Class 10 Science PYQ
+                        </h3>
+
+
+                        <p>
+
+                            Previous year Science questions
+                            for board-oriented revision and
+                            exam practice.
+
+                        </p>
+
+
+                        <div class="pyq-meta">
+
+                            <span
+                                class="pyq-tag class-tag"
+                            >
+                                Class 10
+                            </span>
+
+                            <span
+                                class="pyq-tag board-tag"
+                            >
+                                UP Board
+                            </span>
+
+                            <span
+                                class="pyq-tag year-tag"
+                            >
+                                PYQ
+                            </span>
+
+                        </div>
+
+
+                        <div class="pyq-actions">
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-primary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                ></i>
+
+                                View Paper
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-secondary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-download"
+                                ></i>
+
+                                Download
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CLASS 10 MATHEMATICS
+                         ===================================== -->
+
+                    <article
+                        class="pyq-card"
+                        data-category="class-10 up-board math"
+                    >
+
+                        <div class="pyq-icon">
+
+                            <i
+                                class="fa-solid fa-calculator"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+                            Class 10 Mathematics PYQ
+                        </h3>
+
+
+                        <p>
+
+                            Important previous year Mathematics
+                            questions for focused board exam
+                            preparation.
+
+                        </p>
+
+
+                        <div class="pyq-meta">
+
+                            <span
+                                class="pyq-tag class-tag"
+                            >
+                                Class 10
+                            </span>
+
+                            <span
+                                class="pyq-tag board-tag"
+                            >
+                                UP Board
+                            </span>
+
+                            <span
+                                class="pyq-tag year-tag"
+                            >
+                                PYQ
+                            </span>
+
+                        </div>
+
+
+                        <div class="pyq-actions">
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-primary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                ></i>
+
+                                View Paper
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-secondary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-download"
+                                ></i>
+
+                                Download
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CLASS 9 SCIENCE
+                         ===================================== -->
+
+                    <article
+                        class="pyq-card"
+                        data-category="class-9 science"
+                    >
+
+                        <div class="pyq-icon">
+
+                            <i
+                                class="fa-solid fa-flask"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+                            Class 9 Science PYQ
+                        </h3>
+
+
+                        <p>
+
+                            Practice important Class 9 Science
+                            questions and prepare chapter-wise
+                            concepts.
+
+                        </p>
+
+
+                        <div class="pyq-meta">
+
+                            <span
+                                class="pyq-tag class-tag"
+                            >
+                                Class 9
+                            </span>
+
+                            <span class="pyq-tag">
+                                Science
+                            </span>
+
+                            <span
+                                class="pyq-tag year-tag"
+                            >
+                                PYQ
+                            </span>
+
+                        </div>
+
+
+                        <div class="pyq-actions">
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-primary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                ></i>
+
+                                View Paper
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-secondary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-download"
+                                ></i>
+
+                                Download
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         CLASS 9 MATHEMATICS
+                         ===================================== -->
+
+                    <article
+                        class="pyq-card"
+                        data-category="class-9 math"
+                    >
+
+                        <div class="pyq-icon">
+
+                            <i
+                                class="fa-solid fa-square-root-variable"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+                            Class 9 Mathematics PYQ
+                        </h3>
+
+
+                        <p>
+
+                            Solve previous exam questions to
+                            strengthen calculations and
+                            mathematical concepts.
+
+                        </p>
+
+
+                        <div class="pyq-meta">
+
+                            <span
+                                class="pyq-tag class-tag"
+                            >
+                                Class 9
+                            </span>
+
+                            <span class="pyq-tag">
+                                Mathematics
+                            </span>
+
+                            <span
+                                class="pyq-tag year-tag"
+                            >
+                                PYQ
+                            </span>
+
+                        </div>
+
+
+                        <div class="pyq-actions">
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-primary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-eye"
+                                ></i>
+
+                                View Paper
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pyq-btn pyq-btn-secondary"
+                                data-pyq-status="coming-soon"
+                            >
+
+                                <i
+                                    class="fa-solid fa-download"
+                                ></i>
+
+                                Download
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =====================================
+                         FUTURE PAPERS
+                         ===================================== -->
+
+                    <div class="pyq-coming-soon">
+
+                        <div class="pyq-coming-icon">
+
+                            <i
+                                class="fa-solid fa-folder-open"
+                            ></i>
+
+                        </div>
+
+
+                        <h3>
+                            More Previous Year Papers Coming Soon
+                        </h3>
+
+
+                        <p>
+
+                            Year-wise and subject-wise PYQs
+                            will be added through the secure
+                            EduNexus admin panel. Students will
+                            be able to view and download the
+                            available papers directly.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHY SOLVE PYQs
+             ================================================= -->
+
+        <section class="pyq-info-section">
+
+            <div class="container">
+
+                <div class="pyq-info-grid">
+
+
+                    <div class="pyq-info-card">
+
+                        <i
+                            class="fa-solid fa-chart-line"
+                        ></i>
+
+                        <h3>
+                            Understand Exam Pattern
+                        </h3>
+
+                        <p>
+
+                            Previous papers help students
+                            understand how questions are
+                            structured and presented.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="pyq-info-card">
+
+                        <i
+                            class="fa-solid fa-bullseye"
+                        ></i>
+
+                        <h3>
+                            Identify Important Topics
+                        </h3>
+
+                        <p>
+
+                            Repeated concepts and important
+                            areas become easier to identify
+                            through regular PYQ practice.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="pyq-info-card">
+
+                        <i
+                            class="fa-solid fa-clock"
+                        ></i>
+
+                        <h3>
+                            Improve Time Management
+                        </h3>
+
+                        <p>
+
+                            Solving complete papers helps
+                            students practise answering
+                            questions within exam time.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+             ================================================= -->
+
+        <section class="pyq-cta">
+
+            <div class="container">
+
+                <div class="pyq-cta-box">
+
+                    <h2>
+                        Combine PYQs With Mock Tests
+                    </h2>
+
+                    <p>
+
+                        First understand the previous exam
+                        pattern, then challenge yourself with
+                        a complete mock test.
+
+                    </p>
+
+
+                    <a
+                        href="mock-tests.html"
+                        class="btn"
+                    >
+
+                        <i
+                            class="fa-solid fa-file-circle-check"
+                        ></i>
+
+                        Explore Mock Tests
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        EduNexus
+                    </h3>
+
+                    <p>
+                        Learn Smart. Study Better.
+                        Crack Exams.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="notes.html">
+                        Notes
+                    </a>
+
+                    <a href="quizzes.html">
+                        Quizzes
+                    </a>
+
+                    <a href="mock-tests.html">
+                        Mock Tests
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Resources
+                    </h4>
+
+                    <a href="pyq.html">
+                        PYQs
+                    </a>
+
+                    <a href="mind-maps.html">
+                        Mind Maps
+                    </a>
+
+                    <a href="videos.html">
+                        Videos
+                    </a>
+
+                    <a href="live-classes.html">
+                        Live Classes
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Support
+                    </h4>
+
+                    <a
+                        href="mailto:supportteamedunexus@gmail.com"
+                    >
+
+                        <i
+                            class="fa-solid fa-envelope"
+                        ></i>
+
+                        Support Team
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    ©
+                    <span id="currentYear"></span>
+                    EduNexus by Neeraj Pal.
+                    All rights reserved.
+
+                </p>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BACK TO TOP
+         ===================================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+
+        <i
+            class="fa-solid fa-arrow-up"
+        ></i>
+
+    </button>
+
+
+    <!-- MAIN JS -->
+
+    <script
+        src="../assets/js/main.js"
+    ></script>
+
+
+    <!-- =====================================================
+         PYQ FILTER SCRIPT
+         ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const filterButtons =
+                    document.querySelectorAll(
+                        ".pyq-filter"
+                    );
+
+                const pyqCards =
+                    document.querySelectorAll(
+                        ".pyq-card"
+                    );
+
+
+                /* -----------------------------------------
+                   FILTER PAPERS
+                   ----------------------------------------- */
+
+                filterButtons.forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                const filter =
+                                    button.dataset.filter;
+
+
+                                filterButtons.forEach(
+                                    function (item) {
+
+                                        item.classList.remove(
+                                            "active"
+                                        );
+
+                                    }
+                                );
+
+
+                                button.classList.add(
+                                    "active"
+                                );
+
+
+                                pyqCards.forEach(
+                                    function (card) {
+
+                                        const category =
+                                            card.dataset.category ||
+                                            "";
+
+
+                                        if (
+                                            filter === "all" ||
+                                            category.includes(filter)
+                                        ) {
+
+                                            card.style.display =
+                                                "";
+
+                                        } else {
+
+                                            card.style.display =
+                                                "none";
+
+                                        }
+
+                                    }
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+
+                /* -----------------------------------------
+                   PYQ BUTTONS
+                   ----------------------------------------- */
+
+                const pyqButtons =
+                    document.querySelectorAll(
+                        "[data-pyq-status='coming-soon']"
+                    );
+
+
+                pyqButtons.forEach(
+                    function (button) {
+
+                        button.addEventListener(
+                            "click",
+                            function () {
+
+                                alert(
+                                    "This PYQ will be available soon. Papers are being prepared for EduNexus."
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+<script src="api.js"></script>
+</body>
+
+</html>

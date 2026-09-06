@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EduNexus by Neeraj Pal — Smart learning, topper-style notes, quizzes, mock tests, PYQs, mind maps and educational videos."
+    >
+
+    <meta
+        name="keywords"
+        content="EduNexus, Neeraj Pal, notes, quizzes, mock tests, PYQ, mind maps, education"
+    >
+
+    <meta name="author" content="Neeraj Pal">
+    <link rel="stylesheet" href="youtube.css">
+
+    <title>EduNexus by Neeraj Pal | Learn Smart. Study Better.</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="/11476-artguru.png"
+    >
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="/11476-artguru.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Responsive CSS -->
+    <link
+        rel="stylesheet"
+        href="responsive.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PRELOADER
+    ====================================================== -->
+
+    <div
+        id="preloader"
+        class="preloader"
+        aria-label="Loading EduNexus"
+    >
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img
+                    src="assets/images/logo/logo.png"
+                    alt="EduNexus Logo"
+                    onerror="this.style.display='none'"
+                >
+            </div>
+
+            <div class="loader-spinner"></div>
+
+            <p>Loading EduNexus...</p>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         TOP BRANDING AREA
+         LOGO + BANNER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <!-- LOGO SECTION -->
+        <section
+            class="top-logo-section"
+            aria-label="EduNexus Logo"
+        >
+
+            <div class="container logo-container">
+
+                <a
+                    href="index.html"
+                    class="brand-logo"
+                    aria-label="EduNexus Home"
+                >
+
+                  
+
+                    <!-- Fallback text if image is unavailable -->
+                    <span class="logo-fallback">
+                        EduNexus
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- BANNER SECTION -->
+        <section
+            class="top-banner-section"
+            aria-label="EduNexus Banner"
+        >
+
+            <div class="container banner-container">
+
+                <a
+                    href="index.html"
+                    class="hero-banner-link"
+                    aria-label="EduNexus Banner"
+                >
+
+                  
+
+                    <!-- Banner fallback -->
+                    <div class="banner-fallback">
+
+                        <div class="banner-fallback-content">
+
+                            <span class="banner-badge">
+                                EDUNEXUS
+                            </span>
+
+                            <h1>
+                                Learn Smart.
+                                <span>Study Better.</span>
+                            </h1>
+
+                            <p>
+                                Notes • Quizzes • PYQs • Mock Tests • Mind Maps
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NAVIGATION BAR
+        ================================================== -->
+
+        <nav
+            class="main-navbar"
+            id="mainNavbar"
+            aria-label="Main Navigation"
+        >
+
+            <div class="container navbar-container">
+
+                <!-- Brand inside mobile/desktop navbar -->
+                <a
+                    href="index.html"
+                    class="navbar-brand"
+                >
+                    <span>Edu</span>Nexus
+                </a>
+
+
+                <!-- Mobile Menu Button -->
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <!-- Navigation Links -->
+                <div
+                    class="navbar-menu"
+                    id="navbarMenu"
+                >
+
+                    <a
+                        href="index.html"
+                        class="nav-link active"
+                    >
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <a
+                        href="notes.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Notes</span>
+                    </a>
+
+                    <a
+                        href="quizzes.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-circle-question"></i>
+                        <span>Quizzes</span>
+                    </a>
+
+                    <a
+                        href="mock-tests.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-file-pen"></i>
+                        <span>Mock Tests</span>
+                    </a>
+
+                    <a
+                        href="pyq.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>PYQs</span>
+                    </a>
+
+                    <a
+                        href="mind-maps.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <span>Mind Maps</span>
+                    </a>
+
+                    <a
+                        href="live-classes.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-video"></i>
+                        <span>Live Classes</span>
+                    </a>
+
+                    <a
+                        href="videos.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                        <span>Videos</span>
+                    </a>
+
+                    <a
+                        href="about.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>About</span>
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="nav-link"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+
+                    <a
+                        href="login.html"
+                        class="nav-login-btn"
+                    >
+                        <i class="fa-solid fa-user"></i>
+                        <span>Login</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO SECTION
+        ================================================== -->
+
+        <section class="hero-section">
+
+            <div class="container">
+
+                <div class="hero-grid">
+
+
+                    <!-- Hero Content -->
+                    <div class="hero-content">
+
+                        <div class="hero-badge">
+                            <i class="fa-solid fa-bolt"></i>
+                            Smart Learning Platform
+                        </div>
+
+                        <h2 class="hero-title">
+
+                            Learn Smart.
+                            <br>
+
+                            <span>
+                                Study Better.
+                            </span>
+
+                            <br>
+
+                            Crack Exams.
+
+                        </h2>
+
+                        <p class="hero-description">
+
+                            Welcome to
+                            <strong>EduNexus by Neeraj Pal</strong> —
+                            your complete learning destination for
+                            topper-style notes, mind maps, quizzes,
+                            mock tests, PYQs and educational videos.
+
+                        </p>
+
+
+                        <div class="hero-buttons">
+
+                            <a
+                                href="notes.html"
+                                class="btn btn-primary"
+                            >
+                                <i class="fa-solid fa-book-open"></i>
+                                Explore Notes
+                            </a>
+
+                            <a
+                                href="quizzes.html"
+                                class="btn btn-secondary"
+                            >
+                                <i class="fa-solid fa-play"></i>
+                                Start Quiz
+                            </a>
+
+                        </div>
+
+
+                        <!-- Quick Stats -->
+
+                        <div class="hero-stats">
+
+                            <div class="stat-item">
+                                <strong>9+</strong>
+                                <span>Classes</span>
+                            </div>
+
+                            <div class="stat-item">
+                                <strong>100+</strong>
+                                <span>Resources</span>
+                            </div>
+
+                            <div class="stat-item">
+                                <strong>24×7</strong>
+                                <span>Learning</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Hero Visual -->
+
+                    <div class="hero-visual">
+
+                        <div class="hero-card">
+
+                            <div class="hero-card-glow"></div>
+
+                            <div class="hero-card-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+
+                            <h3>
+                                Your Learning.
+                                <br>
+                                Your Growth.
+                            </h3>
+
+                            <p>
+                                One platform for
+                                smarter preparation.
+                            </p>
+
+
+                            <div class="floating-card floating-card-one">
+
+                                <i class="fa-solid fa-book"></i>
+
+                                <div>
+                                    <strong>Notes</strong>
+                                    <small>Topper Style</small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="floating-card floating-card-two">
+
+                                <i class="fa-solid fa-brain"></i>
+
+                                <div>
+                                    <strong>Mind Maps</strong>
+                                    <small>Learn Faster</small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="floating-card floating-card-three">
+
+                                <i class="fa-solid fa-trophy"></i>
+
+                                <div>
+                                    <strong>Mock Tests</strong>
+                                    <small>Practice More</small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LEARNING HUB
+        ================================================== -->
+
+        <section class="section learning-hub-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        <i class="fa-solid fa-layer-group"></i>
+                        Learning Hub
+                    </span>
+
+                    <h2>
+                        Everything You Need
+                        <span>to Learn Better</span>
+                    </h2>
+
+                    <p>
+                        Explore carefully structured resources
+                        designed to make your preparation easier,
+                        faster and more effective.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+
+                    <!-- Notes -->
+                    <a
+                        href="notes.html"
+                        class="feature-card"
+                    >
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3>Notes</h3>
+
+                            <p>
+                                Chapter-wise and subject-wise
+                                structured study notes.
+                            </p>
+
+                            <span class="feature-link">
+                                Explore Notes
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Mind Maps -->
+                    <a
+                        href="mind-maps.html"
+                        class="feature-card"
+                    >
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3>Mind Maps</h3>
+
+                            <p>
+                                Visual learning resources
+                                for quick revision.
+                            </p>
+
+                            <span class="feature-link">
+                                View Mind Maps
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Quizzes -->
+                    <a
+                        href="quizzes.html"
+                        class="feature-card"
+                    >
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3>Quizzes</h3>
+
+                            <p>
+                                Chapter quizzes to test and
+                                improve your preparation.
+                            </p>
+
+                            <span class="feature-link">
+                                Take a Quiz
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Mock Tests -->
+                    <a
+                        href="mock-tests.html"
+                        class="feature-card"
+                    >
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3>Mock Tests</h3>
+
+                            <p>
+                                Practice full-length tests
+                                in exam-like conditions.
+                            </p>
+
+                            <span class="feature-link">
+                                Start Test
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PYQs -->
+                    <a
+                        href="pyq.html"
+                        class="feature-card"
+                    >
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3>PYQs</h3>
+
+                            <p>
+                                Previous year questions
+                                for focused preparation.
+                            </p>
+
+                            <span class="feature-link">
+                                Explore PYQs
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Live Classes -->
+                    <a
+                        href="live-classes.html"
+                        class="feature-card"
+                    >
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3>Live Classes</h3>
+
+                            <p>
+                                Join educational sessions
+                                and interactive classes.
+                            </p>
+
+                            <span class="feature-link">
+                                View Classes
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CLASS SECTION
+        ================================================== -->
+
+        <section class="section classes-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        <i class="fa-solid fa-school"></i>
+                        Classes
+                    </span>
+
+                    <h2>
+                        Choose Your
+                        <span>Class</span>
+                    </h2>
+
+                    <p>
+                        Find study materials according to
+                        your class and academic requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="class-grid">
+
+
+                    <!-- Class 9 -->
+                    <a
+                        href="notes.html?class=9"
+                        class="class-card class-nine"
+                    >
+
+                        <div class="class-number">
+                            09
+                        </div>
+
+                        <div class="class-card-content">
+
+                            <span>
+                                CLASS
+                            </span>
+
+                            <h3>
+                                Class 9
+                            </h3>
+
+                            <p>
+                                Science • Mathematics
+                            </p>
+
+                            <div class="class-card-link">
+                                Explore Class 9
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Class 10 -->
+                    <a
+                        href="notes.html?class=10"
+                        class="class-card class-ten"
+                    >
+
+                        <div class="class-number">
+                            10
+                        </div>
+
+                        <div class="class-card-content">
+
+                            <span>
+                                CLASS
+                            </span>
+
+                            <h3>
+                                Class 10
+                            </h3>
+
+                            <p>
+                                Physics • English Grammar
+                            </p>
+
+                            <div class="class-card-link">
+                                Explore Class 10
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- More Classes -->
+                    <a
+                        href="courses.html"
+                        class="class-card class-more"
+                    >
+
+                        <div class="class-number">
+                            +
+                        </div>
+
+                        <div class="class-card-content">
+
+                            <span>
+                                MORE
+                            </span>
+
+                            <h3>
+                                Coming Soon
+                            </h3>
+
+                            <p>
+                                More classes and subjects
+                                will be added.
+                            </p>
+
+                            <div class="class-card-link">
+                                View Courses
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             YOUTUBE / LATEST VIDEOS
+        ================================================== -->
+
+        <section class="section youtube-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-tag youtube-tag">
+                        <i class="fa-brands fa-youtube"></i>
+                        YouTube
+                    </span>
+
+                    <h2>
+                        Latest
+                        <span>Videos</span>
+                    </h2>
+
+                    <p>
+                        Watch the latest educational videos
+                        from EduNexus by Neeraj Pal.
+                    </p>
+
+                </div>
+
+
+                <!-- Dynamic video grid -->
+
+                <div
+                    class="video-grid"
+                    id="youtubeVideoGrid"
+                >
+
+                    <!-- Loading cards -->
+                    <div class="video-loading-card">
+                        <div class="video-loading-image"></div>
+                        <div class="video-loading-line"></div>
+                        <div class="video-loading-line short"></div>
+                    </div>
+
+                    <div class="video-loading-card">
+                        <div class="video-loading-image"></div>
+                        <div class="video-loading-line"></div>
+                        <div class="video-loading-line short"></div>
+                    </div>
+
+                    <div class="video-loading-card">
+                        <div class="video-loading-image"></div>
+                        <div class="video-loading-line"></div>
+                        <div class="video-loading-line short"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="section-action">
+
+                    <a
+                        href="pages/videos.html"
+                        class="btn btn-outline"
+                    >
+                        View All Videos
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHY EDUNEXUS
+        ================================================== -->
+
+        <section class="section why-section">
+
+            <div class="container">
+
+                <div class="why-grid">
+
+
+                    <div class="why-content">
+
+                        <span class="section-tag">
+                            <i class="fa-solid fa-star"></i>
+                            Why EduNexus?
+                        </span>
+
+                        <h2>
+                            Study With a
+                            <span>Smarter Strategy</span>
+                        </h2>
+
+                        <p>
+                            EduNexus is designed to bring
+                            important learning resources
+                            together in one simple and
+                            student-friendly platform.
+                        </p>
+
+
+                        <div class="why-list">
+
+                            <div class="why-item">
+
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Structured Learning
+                                    </h3>
+
+                                    <p>
+                                        Resources organized
+                                        by class, subject,
+                                        chapter and topic.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="why-item">
+
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Quick Revision
+                                    </h3>
+
+                                    <p>
+                                        Mind maps and concise
+                                        notes for effective
+                                        revision.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="why-item">
+
+                                <div class="why-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        Practice & Progress
+                                    </h3>
+
+                                    <p>
+                                        Quizzes, mock tests and
+                                        PYQs to strengthen
+                                        preparation.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="why-visual">
+
+                        <div class="why-card">
+
+                            <div class="why-card-top">
+
+                                <span>
+                                    Your Progress
+                                </span>
+
+                                <i class="fa-solid fa-chart-simple"></i>
+
+                            </div>
+
+
+                            <div class="progress-circle">
+
+                                <div class="progress-inner">
+                                    <strong>Learn</strong>
+                                    <small>Every Day</small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-items">
+
+                                <div>
+                                    <span>Notes</span>
+                                    <strong>✓</strong>
+                                </div>
+
+                                <div>
+                                    <span>Practice</span>
+                                    <strong>✓</strong>
+                                </div>
+
+                                <div>
+                                    <span>Revision</span>
+                                    <strong>✓</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA SECTION
+        ================================================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div class="cta-content">
+
+                        <span class="cta-badge">
+                            <i class="fa-solid fa-rocket"></i>
+                            Start Learning Today
+                        </span>
+
+                        <h2>
+                            Ready to Make Your
+                            <span>Preparation Better?</span>
+                        </h2>
+
+                        <p>
+                            Explore EduNexus and start learning
+                            with structured educational resources.
+                        </p>
+
+                        <div class="cta-buttons">
+
+                            <a
+                                href="pages/notes.html"
+                                class="btn btn-light"
+                            >
+                                Explore Resources
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                            <a
+                                href="pages/login.html"
+                                class="btn btn-dark"
+                            >
+                                Create Account
+                                <i class="fa-solid fa-user-plus"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <!-- Footer Brand -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="footer-logo"
+                    >
+                        EduNexus
+                    </a>
+
+                    <p>
+                        Smart learning resources for
+                        smarter preparation.
+                    </p>
+
+
+                    <div class="social-links">
+
+                        <a
+                            href="https://youtube.com/@edunexusbyneeraj?si=Taeg7Dub--blGxRY"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="EduNexus YouTube"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a
+                            href="https://www.threads.com/@edunexusbyneerajpal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="EduNexus Threads"
+                        >
+                            <i class="fa-brands fa-threads"></i>
+                        </a>
+
+                        <a
+                            href="https://t.me/Edunexus_with_Neeraj_pal"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="EduNexus Telegram"
+                        >
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+
+                        <a
+                            href="https://whatsapp.com/channel/0029Vb6lAZS17EmvzShVXJ2i"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="EduNexus WhatsApp Channel"
+                        >
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/edunexusbyneerajpal?stkn=N3VtZDZ6cWVlbjdl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="EduNexus Instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="pages/notes.html">
+                        Notes
+                    </a>
+
+                    <a href="pages/quizzes.html">
+                        Quizzes
+                    </a>
+
+                    <a href="pages/mock-tests.html">
+                        Mock Tests
+                    </a>
+
+                    <a href="pages/pyq.html">
+                        PYQs
+                    </a>
+
+                </div>
+
+
+                <!-- Learning -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Learning
+                    </h3>
+
+                    <a href="pages/mind-maps.html">
+                        Mind Maps
+                    </a>
+
+                    <a href="pages/live-classes.html">
+                        Live Classes
+                    </a>
+
+                    <a href="pages/videos.html">
+                        Videos
+                    </a>
+
+                    <a href="pages/courses.html">
+                        Courses
+                    </a>
+
+                    <a href="pages/about.html">
+                        About EduNexus
+                    </a>
+
+                </div>
+
+
+                <!-- Contact -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Support
+                    </h3>
+
+                    <a href="pages/contact.html">
+                        Contact Us
+                    </a>
+
+                    <a href="mailto:supportteamedunexus@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        supportteamedunexus@gmail.com
+                    </a>
+
+                    <a href="pages/login.html">
+                        Student Login
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer Bottom -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    EduNexus by Neeraj Pal.
+                    All Rights Reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+
+                    <a href="pages/about.html">
+                        About
+                    </a>
+
+                    <a href="pages/contact.html">
+                        Contact
+                    </a>
+
+                    <a href="pages/privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="pages/terms.html">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
+
+    <button
+        id="backToTop"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="main.js"></script>
+
+    <script src="youtube.js"></script>
+
+<script src="api.js"></script>
+</body>
+</html>
