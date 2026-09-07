@@ -3,5 +3,6 @@ const app=express();app.use(helmet());app.use(cors({origin:true,credentials:true
 // Serve the completed frontend from the same Express origin.
 app.use(express.static(require('path').join(__dirname,'../frontend')));
 app.get('/api/health',(req,res)=>res.json({ok:true,service:'EduNexus API',time:new Date().toISOString()}));app.use('/api/auth',require('./routes/auth.routes'));app.use('/api',require('./routes/content.routes'));app.use('/api/results',require('./routes/results.routes'));app.use('/api/admin',require('./routes/admin.routes'));
+app.use('/api/site',require('./routes/site.routes'));
 app.use('/api/files',require('./routes/file.routes'));app.get('/',(req,res)=>res.sendFile(require('path').join(__dirname,'../frontend/index.html')));app.use(notFound);app.use(errorHandler);
 const PORT=process.env.PORT||5000;connectDB().then(async()=>{const User=require('./models/User');const bcrypt=require('bcryptjs');if(process.env.ADMIN_EMAIL&&process.env.ADMIN_PASSWORD&&!await User.findOne({email:process.env.ADMIN_EMAIL})){await User.create({name:'EduNexus Admin',email:process.env.ADMIN_EMAIL,password:await bcrypt.hash(process.env.ADMIN_PASSWORD,12),role:'admin'});console.log('Initial admin created');}app.listen(PORT,()=>console.log(`EduNexus API running on http://localhost:${PORT}`));}).catch(e=>{console.error('DB connection failed',e);process.exit(1)});

@@ -228,9 +228,11 @@
             }
         }
     </style>
+<link rel="stylesheet" href="assets/css/admin-cms.css">
 </head>
 
 <body>
+
 
 <main class="admin-page">
     <div class="admin-container">
@@ -363,9 +365,97 @@
         </section>
 
     </div>
+
+<!-- =====================================================
+     EDUNEXUS ADVANCED CMS WORKSPACE
+===================================================== -->
+<section id="cmsWorkspace" class="cms-workspace" style="display:none;">
+    <div class="cms-workspace-header">
+        <div>
+            <span class="cms-eyebrow">EduNexus CMS</span>
+            <h1 id="cmsWorkspaceTitle">Content Management</h1>
+            <p id="cmsWorkspaceSubtitle">
+                Manage website content directly from the admin panel.
+            </p>
+        </div>
+    </div>
+    <div id="cmsWorkspaceContent"></div>
+</section>
+
 </main>
 
 <script src="admin.js"></script>
+
+<script src="assets/js/admin-cms.js"></script>
+
+
+<script>
+(function () {
+    'use strict';
+
+    const modules = {
+        notes: 'Notes',
+        videos: 'Videos',
+        pyqs: 'PYQs',
+        quizzes: 'Quizzes',
+        'mock-tests': 'Mock Tests',
+        mindmaps: 'Mind Maps',
+        'live-classes': 'Live Classes'
+    };
+
+    function openCMS(module) {
+        const workspace = document.getElementById('cmsWorkspace');
+        const content = document.getElementById('cmsWorkspaceContent');
+        const title = document.getElementById('cmsWorkspaceTitle');
+        const subtitle = document.getElementById('cmsWorkspaceSubtitle');
+
+        if (!workspace || !content || !modules[module]) return;
+
+        workspace.style.display = '';
+        title.textContent = modules[module];
+        subtitle.textContent =
+            'Manage ' + modules[module].toLowerCase() +
+            ' with search, filters, pagination and actions.';
+
+        content.innerHTML = `
+            <div class="cms-card">
+                <div id="cmsLiveList"></div>
+            </div>
+        `;
+
+        const list = document.getElementById('cmsLiveList');
+
+        if (window.EduNexusCMSList &&
+            typeof window.EduNexusCMSList.load === 'function') {
+            window.EduNexusCMSList.load(module, list);
+        } else {
+            list.innerHTML = `
+                <div class="cms-empty">
+                    CMS engine is not ready. Refresh the page and try again.
+                </div>
+            `;
+        }
+
+        workspace.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    window.EduNexusOpenCMS = openCMS;
+
+    document.addEventListener('click', function (event) {
+        const item = event.target.closest('[data-cms-module]');
+        if (!item) return;
+
+        event.preventDefault();
+
+        const module = item.getAttribute('data-cms-module');
+        if (module) openCMS(module);
+    });
+
+})();
+</script>
 
 </body>
 </html>
@@ -1030,3 +1120,100 @@
   window.loadSystemStatus = loadSystemStatus;
 })();
 </script>
+
+<script>
+(function () {
+    'use strict';
+
+    const modules = {
+        'notes': 'Notes',
+        'videos': 'Videos',
+        'pyqs': 'PYQs',
+        'quizzes': 'Quizzes',
+        'mock-tests': 'Mock Tests',
+        'mindmaps': 'Mind Maps',
+        'live-classes': 'Live Classes'
+    };
+
+    function openCMS(module) {
+        const workspace = document.getElementById('cmsWorkspace');
+        const content = document.getElementById('cmsWorkspaceContent');
+        const title = document.getElementById('cmsWorkspaceTitle');
+        const subtitle = document.getElementById('cmsWorkspaceSubtitle');
+
+        if (!workspace || !content || !title) return;
+
+        workspace.style.display = 'block';
+        title.textContent = modules[module] || 'Content Management';
+
+        if (subtitle) {
+            subtitle.textContent =
+                'Manage, search, filter, edit, publish and delete content.';
+        }
+
+        content.innerHTML =
+            '<div id="cmsLiveList"><div class="cms-loading">Loading...</div></div>';
+
+        const list = document.getElementById('cmsLiveList');
+
+        if (window.EduNexusCMSList &&
+            typeof window.EduNexusCMSList.load === 'function') {
+
+            window.EduNexusCMSList.load(module, list);
+
+        } else {
+            list.innerHTML =
+                '<div class="cms-empty">CMS engine unavailable. Refresh the page.</div>';
+        }
+
+        workspace.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    window.EduNexusOpenCMS = openCMS;
+
+    document.addEventListener('click', function (e) {
+        const el = e.target.closest('[data-cms-module]');
+        if (!el) return;
+
+        e.preventDefault();
+
+        const module = el.getAttribute('data-cms-module');
+
+        if (modules[module]) {
+            openCMS(module);
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const textMap = {
+            'Notes': 'notes',
+            'Videos': 'videos',
+            'PYQs': 'pyqs',
+            'Quizzes': 'quizzes',
+            'Mock Tests': 'mock-tests',
+            'Mind Maps': 'mindmaps',
+            'Live Classes': 'live-classes'
+        };
+
+        document.querySelectorAll('a,button').forEach(function (el) {
+
+            const text = el.textContent.trim()
+                .replace(/\s+/g, ' ');
+
+            const module = textMap[text];
+
+            if (module && !el.hasAttribute('data-cms-module')) {
+                el.setAttribute('data-cms-module', module);
+            }
+
+        });
+
+    });
+
+})();
+</script>
+
