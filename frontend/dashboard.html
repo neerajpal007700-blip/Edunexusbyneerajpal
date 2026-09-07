@@ -3,83 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Dashboard | EduNexus</title>
+
+<title>Student Dashboard | EduNexus by Neeraj Pal</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="responsive.css">
+
 <style>
-.dashboard-wrap{
-    max-width:1100px;
-    margin:60px auto;
-    padding:20px;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f6f7fb;
 }
-.dashboard-card{
-    padding:35px;
-    border-radius:20px;
-    background:#fff;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+.dashboard-header{
+    background:linear-gradient(135deg,#6c2cff,#4b16c7);
+    color:white;
+    padding:45px 20px;
 }
-.dashboard-card h1{margin-bottom:10px}
+
+.dashboard-header-inner{
+    max-width:1150px;
+    margin:auto;
+}
+
+.dashboard-header h1{
+    margin:0 0 8px;
+    font-size:32px;
+}
+
+.dashboard-header p{
+    margin:0;
+    opacity:.9;
+}
+
+.dashboard-container{
+    max-width:1150px;
+    margin:35px auto;
+    padding:0 20px;
+}
+
+.dashboard-title{
+    margin-bottom:20px;
+}
+
 .dashboard-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
     gap:20px;
-    margin-top:30px;
 }
-.dashboard-item{
-    padding:25px;
-    border-radius:16px;
-    background:#f6f3ff;
+
+.dashboard-card{
+    background:white;
+    padding:28px 22px;
+    border-radius:18px;
     text-decoration:none;
-    color:inherit;
+    color:#222;
+    box-shadow:0 7px 25px rgba(0,0,0,.07);
+    transition:.25s;
 }
-.logout-btn{
-    margin-top:25px;
-    padding:12px 22px;
+
+.dashboard-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.dashboard-icon{
+    font-size:32px;
+    margin-bottom:14px;
+}
+
+.dashboard-card h3{
+    margin:0 0 7px;
+}
+
+.dashboard-card p{
+    margin:0;
+    color:#666;
+    font-size:14px;
+}
+
+.dashboard-actions{
+    margin-top:30px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.action-btn{
     border:0;
+    padding:13px 22px;
     border-radius:10px;
     cursor:pointer;
-    background:#6c2cff;
-    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.home-btn{
+    background:#eee;
+    color:#222;
+}
+
+.logout-btn{
+    background:#e53935;
+    color:white;
+}
+
+@media(max-width:600px){
+    .dashboard-header h1{
+        font-size:25px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="dashboard-wrap">
-    <div class="dashboard-card">
+<header class="dashboard-header">
+    <div class="dashboard-header-inner">
         <h1>Welcome, <span id="studentName">Student</span> 👋</h1>
-        <p>Your EduNexus Student Dashboard</p>
-
-        <div class="dashboard-grid">
-            <a class="dashboard-item" href="index.html">
-                🏠<br><strong>Home</strong>
-            </a>
-
-            <a class="dashboard-item" href="notes.html">
-                📚<br><strong>Notes</strong>
-            </a>
-
-            <a class="dashboard-item" href="quizzes.html">
-                📝<br><strong>Quizzes</strong>
-            </a>
-
-            <a class="dashboard-item" href="videos.html">
-                🎥<br><strong>Videos</strong>
-            </a>
-        </div>
-
-        <button class="logout-btn" id="logoutBtn">Logout</button>
+        <p>Your EduNexus learning dashboard</p>
     </div>
-</div>
+</header>
+
+<main class="dashboard-container">
+
+    <h2 class="dashboard-title">📚 Your Learning Hub</h2>
+
+    <div class="dashboard-grid">
+
+        <a href="notes.html" class="dashboard-card">
+            <div class="dashboard-icon">📚</div>
+            <h3>Notes</h3>
+            <p>Study smart with quality notes.</p>
+        </a>
+
+        <a href="quizzes.html" class="dashboard-card">
+            <div class="dashboard-icon">📝</div>
+            <h3>Quizzes</h3>
+            <p>Test your knowledge.</p>
+        </a>
+
+        <a href="mock-tests.html" class="dashboard-card">
+            <div class="dashboard-icon">🎯</div>
+            <h3>Mock Tests</h3>
+            <p>Practice for your exams.</p>
+        </a>
+
+        <a href="pyq.html" class="dashboard-card">
+            <div class="dashboard-icon">📄</div>
+            <h3>PYQs</h3>
+            <p>Practice previous year questions.</p>
+        </a>
+
+        <a href="mind-maps.html" class="dashboard-card">
+            <div class="dashboard-icon">🧠</div>
+            <h3>Mind Maps</h3>
+            <p>Learn concepts visually.</p>
+        </a>
+
+        <a href="videos.html" class="dashboard-card">
+            <div class="dashboard-icon">🎥</div>
+            <h3>Videos</h3>
+            <p>Watch EduNexus learning videos.</p>
+        </a>
+
+        <a href="live-classes.html" class="dashboard-card">
+            <div class="dashboard-icon">🔴</div>
+            <h3>Live Classes</h3>
+            <p>Join upcoming classes.</p>
+        </a>
+
+        <a href="index.html" class="dashboard-card">
+            <div class="dashboard-icon">🏠</div>
+            <h3>EduNexus Home</h3>
+            <p>Return to the main website.</p>
+        </a>
+
+    </div>
+
+    <div class="dashboard-actions">
+        <a href="index.html" class="action-btn home-btn">
+            🏠 Home
+        </a>
+
+        <button id="logoutBtn" class="action-btn logout-btn">
+            🚪 Logout
+        </button>
+    </div>
+
+</main>
 
 <script src="api.js"></script>
+
 <script>
+const token = localStorage.getItem("edunexusToken");
 const user = JSON.parse(
     localStorage.getItem("edunexusUser") || "null"
 );
-
-const token = localStorage.getItem("edunexusToken");
 
 if (!token || !user) {
     window.location.href = "login.html";
