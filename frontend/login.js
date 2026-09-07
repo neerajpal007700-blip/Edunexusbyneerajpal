@@ -361,7 +361,7 @@
 
                     console.log("LOGIN: success", data);
                     showStatus("success", "fa-circle-check", `Welcome back, ${data.user.name}!`);
-                    setTimeout(() => { window.location.href = data.user.role === "admin" ? "admin.html" : "index.html"; }, 700);
+                    setTimeout(() => { window.location.href = data.user.role === "admin" ? "admin.html" : "dashboard.html"; }, 700);
 
 
                 }
