@@ -472,10 +472,12 @@
                 
             } catch (error) {
 
+                console.error("EduNexus Signup Error:", error);
+
                 showStatus(
                     "error",
                     "fa-circle-exclamation",
-                    "Unable to connect to the signup service. Please try again."
+                    error?.message || "Signup failed. Please try again."
                 );
 
             }
