@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | EduNexus</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .admin-page {
+            min-height: 100vh;
+            background: #f7f5fc;
+            padding: 40px 20px;
+        }
+
+        .admin-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .admin-title h1 {
+            margin: 0 0 6px;
+            font-size: 30px;
+        }
+
+        .admin-title p {
+            margin: 0;
+            color: #777;
+        }
+
+        .admin-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 30px rgba(30,20,60,.07);
+        }
+
+        .admin-card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            border: 1px solid #ddd7eb;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font: inherit;
+            outline: none;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #6c2cff;
+        }
+
+        .upload-btn,
+        .logout-btn {
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .upload-btn {
+            background: #6c2cff;
+            color: white;
+        }
+
+        .upload-btn:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
+        .logout-btn {
+            background: #eee9f8;
+            color: #4b16c7;
+        }
+
+        .status {
+            display: none;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+        }
+
+        .status.show {
+            display: block;
+        }
+
+        .status.success {
+            background: #e9f9ef;
+            color: #18733b;
+        }
+
+        .status.error {
+            background: #fff0f0;
+            color: #b42318;
+        }
+
+        .files-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .file-item {
+            border: 1px solid #eee9f5;
+            border-radius: 13px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .file-info {
+            min-width: 0;
+        }
+
+        .file-name {
+            font-weight: 700;
+            word-break: break-word;
+        }
+
+        .file-meta {
+            color: #777;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .file-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .file-actions a,
+        .delete-btn {
+            border: none;
+            border-radius: 8px;
+            padding: 9px 13px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .file-actions a {
+            background: #f0ebff;
+            color: #5b24d6;
+        }
+
+        .delete-btn {
+            background: #fff0f0;
+            color: #c62828;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 35px 10px;
+            color: #777;
+        }
+
+        @media (max-width: 700px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .admin-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .file-item {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .file-actions {
+                width: 100%;
+            }
+
+            .file-actions a,
+            .delete-btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="admin-page">
+    <div class="admin-container">
+
+        <header class="admin-header">
+            <div class="admin-title">
+                <h1>EduNexus Admin Dashboard</h1>
+                <p>Manage your educational files without editing code.</p>
+            </div>
+
+            <button type="button" class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+        </header>
+
+        <div id="status" class="status"></div>
+
+        <section class="admin-card">
+            <h2>Upload File</h2>
+
+            <form id="uploadForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="classLevel">Class</label>
+                        <select id="classLevel" name="classLevel" required>
+                            <option value="">Select Class</option>
+                            <option value="6">Class 6</option>
+                            <option value="7">Class 7</option>
+                            <option value="8">Class 8</option>
+                            <option value="9">Class 9</option>
+                            <option value="10">Class 10</option>
+                            <option value="11">Class 11</option>
+                            <option value="12">Class 12</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required disabled>
+                            <option value="">Select Class First</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contentType">Content Type</label>
+                        <select id="contentType" name="contentType" required>
+                            <option value="pdf">PDF</option>
+                            <option value="notes">Notes</option>
+                            <option value="mindmap">Mind Map</option>
+                            <option value="assignment">Assignment</option>
+                            <option value="question-paper">Question Paper</option>
+                            <option value="ebook">E-Book</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chapter">Chapter</label>
+                        <input
+                            type="text"
+                            id="chapter"
+                            name="chapter"
+                            placeholder="e.g. Quadratic Equations"
+                        >
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="title">Title</label>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="Enter content title..."
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="general">General</option>
+                            <option value="notes">Notes</option>
+                            <option value="study-material">Study Material</option>
+                            <option value="assignments">Assignments</option>
+                            <option value="question-papers">Question Papers</option>
+                            <option value="ebooks">E-Books</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file">Select File</label>
+                        <input
+                            type="file"
+                            id="file"
+                            name="file"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="description">Description</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            placeholder="Enter a short description..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group full">
+                        <button type="submit" class="upload-btn" id="uploadBtn">
+                            Upload File
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+
+        <section class="admin-card">
+            <h2>Uploaded Files</h2>
+
+            <div id="filesList" class="files-list">
+                <div class="empty-state">
+                    Loading files...
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -369,3 +369,664 @@
 
 </body>
 </html>
+
+<script>
+(function () {
+  const token = localStorage.getItem('edunexusToken');
+  const API = window.EDUNEXUS_API_BASE || 'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function loadDashboardStats() {
+    if (!token) return;
+
+    try {
+      const res = await fetch(API + '/admin/stats', {
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
+      });
+
+      if (!res.ok) return;
+
+      const result = await res.json();
+      const s = result.stats || {};
+
+      const set = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value ?? 0;
+      };
+
+      set('statUsers', s.users);
+      set('statStudents', s.students);
+      set('statNotes', s.notes);
+      set('statVideos', s.videos);
+    } catch (e) {
+      console.error('Dashboard stats error:', e);
+    }
+  }
+
+  loadDashboardStats();
+})();
+</script>
+
+<script>
+(function () {
+  const token = localStorage.getItem('edunexusToken');
+  const API = window.EDUNEXUS_API_BASE || 'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function loadContent(endpoint, sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section || !token) return;
+
+    let container = section.querySelector('.cms-data');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'cms-data';
+      section.appendChild(container);
+    }
+
+    container.innerHTML = '<p>Loading...</p>';
+
+    try {
+      const res = await fetch(API + endpoint + '?page=1&limit=20', {
+        headers: { Authorization: 'Bearer ' + token }
+      });
+
+      const result = await res.json();
+      const items = result.data || result.items || [];
+
+      if (!res.ok) throw new Error(result.message || 'Request failed');
+
+      if (!items.length) {
+        container.innerHTML = '<p>No content found.</p>';
+        return;
+      }
+
+      container.innerHTML = `
+        <div style="overflow:auto;margin-top:20px">
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:10px">Title</th>
+                <th style="text-align:left;padding:10px">Status</th>
+                <th style="text-align:left;padding:10px">Created</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map(item => `
+                <tr>
+                  <td style="padding:10px">${escapeHTML(item.title || item.name || 'Untitled')}</td>
+                  <td style="padding:10px">
+                    ${item.published ? 'Published' : 'Draft'}
+                  </td>
+                  <td style="padding:10px">
+                    ${item.createdAt ? new Date(item.createdAt).toLocaleDateString() : '-'}
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (err) {
+      container.innerHTML =
+        '<p style="color:#dc2626">Unable to load content.</p>';
+      console.error(endpoint, err);
+    }
+  }
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  window.loadAdminContent = function () {
+    loadContent('/notes', 'notes');
+    loadContent('/videos', 'videos');
+    loadContent('/quizzes', 'quizzes');
+    loadContent('/mindmaps', 'mindmaps');
+    loadContent('/live-classes', 'live-classes');
+  };
+
+  window.loadAdminContent();
+})();
+</script>
+
+<script>
+(function () {
+  const token = localStorage.getItem('edunexusToken');
+  const API = window.EDUNEXUS_API_BASE || 'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function loadAdminUsers() {
+    const table = document.getElementById('usersTable');
+    if (!table || !token) return;
+
+    table.innerHTML = '<tr><td colspan="6">Loading users...</td></tr>';
+
+    try {
+      const res = await fetch(API + '/admin/users?page=1&limit=50', {
+        headers: { Authorization: 'Bearer ' + token }
+      });
+
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.message || 'Failed');
+
+      const users = result.data || result.users || [];
+
+      if (!users.length) {
+        table.innerHTML = '<tr><td colspan="6">No users found.</td></tr>';
+        return;
+      }
+
+      table.innerHTML = users.map(user => `
+        <tr>
+          <td>${escapeHTML(user.name || '-')}</td>
+          <td>${escapeHTML(user.email || '-')}</td>
+          <td>${escapeHTML(user.role || 'student')}</td>
+          <td>${user.active === false ? 'Inactive' : 'Active'}</td>
+          <td>${user.createdAt ? new Date(user.createdAt).toLocaleDateString() : '-'}</td>
+          <td>
+            <button onclick="toggleUserStatus('${user._id}', ${user.active !== false})">
+              ${user.active === false ? 'Activate' : 'Deactivate'}
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    } catch (err) {
+      console.error(err);
+      table.innerHTML =
+        '<tr><td colspan="6" style="color:#dc2626">Unable to load users.</td></tr>';
+    }
+  }
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  window.toggleUserStatus = async function (id, currentlyActive) {
+    if (!confirm(currentlyActive
+      ? 'Deactivate this user?'
+      : 'Activate this user?')) return;
+
+    try {
+      const res = await fetch(API + '/admin/users/' + id + '/status', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + token
+        },
+        body: JSON.stringify({
+          active: !currentlyActive
+        })
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) throw new Error(result.message || 'Failed');
+
+      alert('User status updated successfully.');
+      loadAdminUsers();
+    } catch (err) {
+      alert(err.message || 'Unable to update user.');
+    }
+  };
+
+  window.loadAdminUsers = loadAdminUsers;
+
+  document.addEventListener('DOMContentLoaded', loadAdminUsers);
+})();
+</script>
+
+<script>
+(function () {
+  const token = localStorage.getItem('edunexusToken');
+  const API = window.EDUNEXUS_API_BASE || 'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function adminRequest(url, options = {}) {
+    const res = await fetch(API + url, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+        ...(options.headers || {})
+      }
+    });
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.message || 'Request failed');
+    return data;
+  }
+
+  async function loadAnnouncements() {
+    const box = document.getElementById('announcementList');
+    if (!box || !token) return;
+
+    box.innerHTML = '<p>Loading announcements...</p>';
+
+    try {
+      const result = await adminRequest('/admin/announcements');
+      const items = result.data || result.announcements || result || [];
+
+      if (!Array.isArray(items) || !items.length) {
+        box.innerHTML = '<p>No announcements found.</p>';
+        return;
+      }
+
+      box.innerHTML = items.map(a => `
+        <div style="padding:15px;margin:10px 0;border:1px solid #ddd;border-radius:10px">
+          <strong>${escapeHTML(a.title || 'Untitled')}</strong>
+          <p>${escapeHTML(a.message || '')}</p>
+          <small>
+            ${a.published ? 'Published' : 'Draft'}
+            ${a.priority != null ? ' • Priority: ' + a.priority : ''}
+          </small>
+        </div>
+      `).join('');
+    } catch (err) {
+      console.error(err);
+      box.innerHTML =
+        '<p style="color:#dc2626">Unable to load announcements.</p>';
+    }
+  }
+
+  async function loadActivity() {
+    const section = document.getElementById('activity');
+    if (!section || !token) return;
+
+    let box = section.querySelector('.activity-data');
+
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'activity-data';
+      section.appendChild(box);
+    }
+
+    box.innerHTML = '<p>Loading activity...</p>';
+
+    try {
+      const result = await adminRequest('/admin/activity?limit=30');
+      const items = result.data || result.activities || result || [];
+
+      if (!Array.isArray(items) || !items.length) {
+        box.innerHTML = '<p>No activity found.</p>';
+        return;
+      }
+
+      box.innerHTML = `
+        <div style="overflow:auto;margin-top:20px">
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:10px">Action</th>
+                <th style="text-align:left;padding:10px">Module</th>
+                <th style="text-align:left;padding:10px">Description</th>
+                <th style="text-align:left;padding:10px">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map(a => `
+                <tr>
+                  <td style="padding:10px">${escapeHTML(a.action || '-')}</td>
+                  <td style="padding:10px">${escapeHTML(a.module || '-')}</td>
+                  <td style="padding:10px">${escapeHTML(a.description || '-')}</td>
+                  <td style="padding:10px">
+                    ${a.createdAt ? new Date(a.createdAt).toLocaleString() : '-'}
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (err) {
+      console.error(err);
+      box.innerHTML =
+        '<p style="color:#dc2626">Unable to load activity.</p>';
+    }
+  }
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  window.loadAdminAnnouncements = loadAnnouncements;
+  window.loadAdminActivity = loadActivity;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadAnnouncements();
+    loadActivity();
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const token = localStorage.getItem('edunexusToken');
+  const API = window.EDUNEXUS_API_BASE || 'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function loadSiteSettings() {
+    const section = document.getElementById('site-settings');
+    if (!section || !token) return;
+
+    let box = section.querySelector('.settings-data');
+
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'settings-data';
+      section.appendChild(box);
+    }
+
+    box.innerHTML = '<p>Loading settings...</p>';
+
+    try {
+      const res = await fetch(API + '/admin/settings', {
+        headers: {
+          Authorization: 'Bearer ' + token
+        }
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.message || 'Failed to load settings');
+      }
+
+      const settings = result.data || result.settings || result || [];
+
+      if (!Array.isArray(settings) || !settings.length) {
+        box.innerHTML = '<p>No site settings configured yet.</p>';
+        return;
+      }
+
+      box.innerHTML = `
+        <div style="overflow:auto;margin-top:20px">
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:10px">Key</th>
+                <th style="text-align:left;padding:10px">Value</th>
+                <th style="text-align:left;padding:10px">Public</th>
+                <th style="text-align:left;padding:10px">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${settings.map(s => `
+                <tr>
+                  <td style="padding:10px">
+                    ${escapeHTML(s.key || '-')}
+                  </td>
+
+                  <td style="padding:10px">
+                    <input
+                      id="setting-${escapeHTML(s.key)}"
+                      value="${escapeHTML(
+                        typeof s.value === 'object'
+                          ? JSON.stringify(s.value)
+                          : (s.value ?? '')
+                      )}"
+                      style="width:100%;padding:8px"
+                    >
+                  </td>
+
+                  <td style="padding:10px">
+                    ${s.public === false ? 'Private' : 'Public'}
+                  </td>
+
+                  <td style="padding:10px">
+                    <button onclick="saveSiteSetting('${encodeURIComponent(s.key)}')">
+                      Save
+                    </button>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (err) {
+      console.error(err);
+      box.innerHTML =
+        '<p style="color:#dc2626">Unable to load site settings.</p>';
+    }
+  }
+
+  window.saveSiteSetting = async function (encodedKey) {
+    const key = decodeURIComponent(encodedKey);
+    const input = document.getElementById('setting-' + key);
+
+    if (!input) return;
+
+    try {
+      let value = input.value;
+
+      try {
+        value = JSON.parse(value);
+      } catch (_) {}
+
+      const res = await fetch(
+        API + '/admin/settings/' + encodeURIComponent(key),
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + token
+          },
+          body: JSON.stringify({ value })
+        }
+      );
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.message || 'Failed to save setting');
+      }
+
+      alert('Setting saved successfully.');
+      loadSiteSettings();
+    } catch (err) {
+      alert(err.message || 'Unable to save setting.');
+    }
+  };
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  document.addEventListener('DOMContentLoaded', loadSiteSettings);
+})();
+</script>
+
+<script>
+(function () {
+  const token = localStorage.getItem('edunexusToken');
+  const API = window.EDUNEXUS_API_BASE || 'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function loadCMSList(endpoint, sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section || !token) return;
+
+    let box = section.querySelector('.cms-api-data');
+
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'cms-api-data';
+      section.appendChild(box);
+    }
+
+    box.innerHTML = '<p>Loading...</p>';
+
+    try {
+      const res = await fetch(API + endpoint + '?page=1&limit=20', {
+        headers: { Authorization: 'Bearer ' + token }
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.message || 'Failed');
+      }
+
+      const items = result.data || result.items || [];
+
+      if (!items.length) {
+        box.innerHTML = '<p>No items found.</p>';
+        return;
+      }
+
+      box.innerHTML = `
+        <div style="overflow:auto;margin-top:20px">
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:10px">Title</th>
+                <th style="text-align:left;padding:10px">Status</th>
+                <th style="text-align:left;padding:10px">Created</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map(item => `
+                <tr>
+                  <td style="padding:10px">
+                    ${escapeHTML(item.title || 'Untitled')}
+                  </td>
+                  <td style="padding:10px">
+                    ${escapeHTML(
+                      item.status ||
+                      (item.published ? 'Published' : 'Draft')
+                    )}
+                  </td>
+                  <td style="padding:10px">
+                    ${item.createdAt
+                      ? new Date(item.createdAt).toLocaleDateString()
+                      : '-'}
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (err) {
+      console.error(endpoint, err);
+      box.innerHTML =
+        '<p style="color:#dc2626">Unable to load data.</p>';
+    }
+  }
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    loadCMSList('/pyqs', 'pyqs');
+    loadCMSList('/mock-tests', 'mock-tests');
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const API = window.EDUNEXUS_API_BASE ||
+    'https://edunexusbyneerajpal.onrender.com/api';
+
+  async function loadSystemStatus() {
+    const section = document.getElementById('system-status');
+    if (!section) return;
+
+    let box = section.querySelector('.system-status-data');
+
+    if (!box) {
+      box = document.createElement('div');
+      box.className = 'system-status-data';
+      section.appendChild(box);
+    }
+
+    box.innerHTML = '<p>Checking system...</p>';
+
+    try {
+      const start = performance.now();
+
+      const res = await fetch(API + '/health');
+      const data = await res.json();
+
+      const latency = Math.round(performance.now() - start);
+
+      if (!res.ok || !data.ok) {
+        throw new Error('API unavailable');
+      }
+
+      box.innerHTML = `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:20px">
+
+          <div style="padding:20px;border:1px solid #ddd;border-radius:12px">
+            <strong>API Status</strong>
+            <div style="margin-top:8px">🟢 Online</div>
+          </div>
+
+          <div style="padding:20px;border:1px solid #ddd;border-radius:12px">
+            <strong>Response Time</strong>
+            <div style="margin-top:8px">${latency} ms</div>
+          </div>
+
+          <div style="padding:20px;border:1px solid #ddd;border-radius:12px">
+            <strong>Service</strong>
+            <div style="margin-top:8px">${escapeHTML(data.service || 'EduNexus API')}</div>
+          </div>
+
+          <div style="padding:20px;border:1px solid #ddd;border-radius:12px">
+            <strong>Last Check</strong>
+            <div style="margin-top:8px">
+              ${data.time ? new Date(data.time).toLocaleString() : '-'}
+            </div>
+          </div>
+
+        </div>
+      `;
+    } catch (error) {
+      console.error(error);
+
+      box.innerHTML = `
+        <div style="padding:20px;border:1px solid #ddd;border-radius:12px;color:#dc2626">
+          🔴 API Offline / Unreachable
+        </div>
+      `;
+    }
+  }
+
+  function escapeHTML(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  document.addEventListener('DOMContentLoaded', loadSystemStatus);
+
+  window.loadSystemStatus = loadSystemStatus;
+})();
+</script>
